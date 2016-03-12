@@ -1,7 +1,7 @@
 ---
 title: "Final Project Proposal"
 author: "Daniel Dittenhafer & Jashan Narhan"
-date: "March 9, 2016"
+date: "March 12, 2016"
 documentclass: article 
 geometry: margin=0.75in
 output: 
