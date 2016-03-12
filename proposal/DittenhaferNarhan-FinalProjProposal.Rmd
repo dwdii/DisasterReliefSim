@@ -1,0 +1,76 @@
+---
+title: "Final Project Proposal"
+author: "Daniel Dittenhafer & Jashan Narhan"
+date: "March 9, 2016"
+documentclass: article 
+geometry: margin=0.75in
+output: 
+  pdf_document:
+    number_sections: yes
+subtitle: "DATA 604: Simulation & Modeling"
+---
+```{r, echo=FALSE, message=FALSE}
+library(knitr)
+library(knitcitations)
+library(RefManageR)
+
+cleanbib()
+
+cite_options(style="markdown")
+
+# bibBirthData <- bibentry(bibtype="Misc",
+#                          author=person(family="HHS"),
+#                          publisher="United States Department of Health and Human Services (US DHHS), Centers for Disease Control and Prevention (CDC), National Center for Health Statistics (NCHS), Division of Vital Statistics",
+#                          title="Natality public-use data 2007-2014 on CDC WONDER Online Database",
+#                          year=2016,
+#                          month="February",
+#                          url="http://wonder.cdc.gov/natality-current.html")
+
+
+bibBastianEtAl <- bibentry(bibtype="Article",
+                 title="Multi-criteria logistics modeling for military humanitarian assistance and disaster relief aerial delivery operations",
+                 author=personList(person(family="Bastian", given="Nathaniel"),
+                                   person(family="Griffin", given="Paul"),
+                                   person(family="Spero", given="Eric"),
+                                   person(family="Fulton", given="Lawrence")),
+                 publisher="Springer Berlin Heidelberg",
+                 journal="Optimization Letters",
+                 year=2015,
+                 doi="10.1007/s11590-015-0888-1")
+
+```
+# Problem Statement & Research Questions
+
+TBD
+
+# Statement of Objectives
+
+TBD
+
+# Data Set(s)
+
+TBD
+
+
+
+# Recent Journal Papers
+
+## Multi-criteria logistic modeling for miliary humanitarian assistance...
+
+This paper describes a model complete with objective function an array of constraints for aiding in decision support for humanitarian assistance and disaster relief (HA/DR) efforts. Specifically, the model aims to determine the optimal the aerial supply chain network for HA/DR given target goals for response time, supply chain cost and unmet demand in the disaster zone (`r citep(bibBastianEtAl)`).
+
+## Article 2
+
+TBD
+
+## Evaluation
+
+TBD
+
+# References
+
+```{r, results='asis', echo=FALSE}
+BibOptions(style="html", bib.style="authortitle")
+bibliography()
+```
+
