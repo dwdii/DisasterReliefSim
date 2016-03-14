@@ -58,17 +58,19 @@ bibHdxWeb <- bibentry(bibtype="Misc",
 ```
 # Problem Statement & Research Questions
 
+**TBD**
+
 Planning for disaster relief scenarios can be a tricky endevour. Where will the next disaster occur? When? On what scale? The historical record can be useful to understand a range of possible answers, but this raises more questions. How many supplies should be pre-staged in anticipation of a future disaster? How might a given set of supplies be useful for multiple disasters? Questions like these are considered in current research as shown in the papers reviewed for this proposal.
 
 # Statement of Objectives
 
-TBD
+We plan to use a combination of R and Simio to develop and execute a simulation model inorder to ... **TBD** 
 
 # Data Set(s)
 
 The Humanitarian Data Exchange provides many different data sets which could be benefitial for this project `r citep(bibHdxWeb)`.
 
-TBD
+**TBD**
 
 # Recent Journal Papers
 
@@ -82,7 +84,7 @@ This paper describes a model for delivering disaster relief via multiple transpo
 
 ## Evaluation
 
-TBD
+**TBD**
 
 # References
 
