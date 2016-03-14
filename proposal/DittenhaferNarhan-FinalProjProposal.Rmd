@@ -38,10 +38,27 @@ bibBastianEtAl <- bibentry(bibtype="Article",
                  year=2015,
                  doi="10.1007/s11590-015-0888-1")
 
+bibOzdamarEtAl <- bibentry(bibtype="Article",
+                 title="Emergency Logistics Planning in Natural Disasters",
+                 author=personList(person(family="Ozdamar", given="Linet"),
+                                   person(family="Ekinci", given="Ediz"),
+                                   person(family="Kucukyazici", given="Beste")),
+                 publisher="Kluwer Academic Publishers",
+                 journal="Annals of Operations Research",
+                 year=2004)
+
+bibHdxWeb <- bibentry(bibtype="Misc",
+                      author=person(family="United Nations Secretariat"),
+                      title="Humanitarian Data Exchange",
+                      publisher="United Nations Office for the Coordination of Humanitarian Affairs",
+                      year=2016,
+                      url="https://data.hdx.rwlabs.org/")
+
+  
 ```
 # Problem Statement & Research Questions
 
-TBD
+Planning for disaster relief scenarios can be a tricky endevour. Where will the next disaster occur? When? On what scale? The historical record can be useful to understand a range of possible answers, but this raises more questions. How many supplies should be pre-staged in anticipation of a future disaster? How might a given set of supplies be useful for multiple disasters? Questions like these are considered in current research as shown in the papers reviewed for this proposal.
 
 # Statement of Objectives
 
@@ -49,19 +66,19 @@ TBD
 
 # Data Set(s)
 
+The Humanitarian Data Exchange provides many different data sets which could be benefitial for this project `r citep(bibHdxWeb)`.
+
 TBD
-
-
 
 # Recent Journal Papers
 
 ## Multi-criteria logistic modeling for miliary humanitarian assistance...
 
-This paper describes a model complete with objective function an array of constraints for aiding in decision support for humanitarian assistance and disaster relief (HA/DR) efforts. Specifically, the model aims to determine the optimal the aerial supply chain network for HA/DR given target goals for response time, supply chain cost and unmet demand in the disaster zone (`r citep(bibBastianEtAl)`).
+This paper describes a model complete with objective function an array of constraints for aiding in decision support for humanitarian assistance and disaster relief (HA/DR) efforts. Specifically, the model aims to determine the optimal the aerial supply chain network for HA/DR given target goals for response time, supply chain cost and unmet demand in the disaster zone `r citep(bibBastianEtAl)`.
 
-## Article 2
+## Emergency Logistics Planning in Natural Disasters
 
-TBD
+This paper describes a model for delivering disaster relief via multiple transporation methods `r citep(bibOzdamarEtAl)`. The model focuses on minimizing f demand for various disaster relie commondities at various disaster locations, while considering an array of constraints. The model considers a disaster that emcompasses a region which includes the supply depots whereby a given delivery of disaster relief to one location might simultaneously be a pickup of disaster relief destined for another location in the same disaster. One might imagine an earthquake in which one area has excess food but not enough water, and logistics planners desire to optimizes the sharing of supplies.
 
 ## Evaluation
 
