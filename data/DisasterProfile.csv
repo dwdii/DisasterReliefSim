@@ -1,0 +1,299 @@
+"disaster group","disaster subgroup","disaster type",continent,region,occurrence,"Total deaths",Affected,Injured,Homeless,"Total affected","Total damage"
+"Complex Disasters","Complex Disasters","Complex Disasters",Africa,"Eastern Africa",2,0,2300000,0,0,2300000,0
+"Complex Disasters","Complex Disasters","Complex Disasters",Africa,"Middle Africa",1,0,45000,0,0,45000,0
+"Complex Disasters","Complex Disasters","Complex Disasters",Africa,"Northern Africa",1,0,2600000,0,0,2600000,0
+"Complex Disasters","Complex Disasters","Complex Disasters",Africa,"Western Africa",1,0,50000,0,0,50000,0
+"Complex Disasters","Complex Disasters","Complex Disasters",Americas,"Central America",2,0,15500,0,0,15500,0
+"Complex Disasters","Complex Disasters","Complex Disasters",Asia,"Eastern Asia",1,610000,8000000,0,0,8000000,0
+"Complex Disasters","Complex Disasters","Complex Disasters",Asia,"South-Eastern Asia",1,0,900000,0,0,900000,0
+"Complex Disasters","Complex Disasters","Complex Disasters",Asia,"Southern Asia",2,0,838400,0,0,838400,0
+"Complex Disasters","Complex Disasters","Complex Disasters",Asia,"Western Asia",2,0,4937214,0,0,4937214,0
+"Complex Disasters","Complex Disasters","Complex Disasters",Europe,"Russian Federation",1,5000000,0,0,0,0,0
+Natural,Biological,"Animal accident",Africa,"Western Africa",1,12,5,0,0,5,0
+Natural,Biological,Epidemic,Africa,"Eastern Africa",283,250784,10335271,66128,0,10401399,0
+Natural,Biological,Epidemic,Africa,"Middle Africa",170,27471,1032113,2530,0,1034643,0
+Natural,Biological,Epidemic,Africa,"Northern Africa",47,22277,224690,586,0,225276,0
+Natural,Biological,Epidemic,Africa,"Southern Africa",23,1480,169811,518,0,170329,0
+Natural,Biological,Epidemic,Africa,"Western Africa",282,179586,1208584,34920,0,1243504,0
+Natural,Biological,Epidemic,Americas,Caribbean,29,686,494292,277671,0,771963,0
+Natural,Biological,Epidemic,Americas,"Central America",49,1550,315468,0,0,315468,7
+Natural,Biological,Epidemic,Americas,"Northern America",12,50879,2415620,0,0,2415620,0
+Natural,Biological,Epidemic,Americas,"South America",76,15288,2747931,79725,0,2827656,0
+Natural,Biological,Epidemic,Asia,"Central Asia",12,261,25861,141,0,26002,0
+Natural,Biological,Epidemic,Asia,"Eastern Asia",27,1562080,2310019,185,0,2310204,0
+Natural,Biological,Epidemic,Asia,"South-Eastern Asia",109,8963,1295727,124336,0,1420063,0
+Natural,Biological,Epidemic,Asia,"Southern Asia",164,4957089,4209901,211,0,4210112,0
+Natural,Biological,Epidemic,Asia,"Western Asia",30,1069,220987,2217,0,223204,0
+Natural,Biological,Epidemic,Europe,"Eastern Europe",19,321,172822,0,0,172822,0
+Natural,Biological,Epidemic,Europe,"Northern Europe",9,73,2021,0,0,2021,0
+Natural,Biological,Epidemic,Europe,"Russian Federation",2,2500000,18000000,0,0,18000000,0
+Natural,Biological,Epidemic,Europe,"Southern Europe",12,47,14071,0,0,14071,0
+Natural,Biological,Epidemic,Europe,"Western Europe",7,34,920,0,0,920,0
+Natural,Biological,Epidemic,Oceania,"Australia and New Zealand",3,6700,7,0,0,7,0
+Natural,Biological,Epidemic,Oceania,Melanesia,9,451,13408,0,0,13408,0
+Natural,Biological,Epidemic,Oceania,Micronesia,3,42,4001,0,0,4001,0
+Natural,Biological,Epidemic,Oceania,Polynesia,4,8,2867,0,0,2867,0
+Natural,Biological,"Insect infestation",Africa,"Eastern Africa",12,0,2300000,0,0,2300000,3500
+Natural,Biological,"Insect infestation",Africa,"Middle Africa",7,0,0,0,0,0,1700
+Natural,Biological,"Insect infestation",Africa,"Northern Africa",14,0,0,0,0,0,0
+Natural,Biological,"Insect infestation",Africa,"Southern Africa",1,0,0,0,0,0,0
+Natural,Biological,"Insect infestation",Africa,"Western Africa",35,0,500000,0,0,500000,0
+Natural,Biological,"Insect infestation",Americas,"South America",3,0,2000,0,0,2000,104000
+Natural,Biological,"Insect infestation",Asia,"Central Asia",1,0,0,0,0,0,0
+Natural,Biological,"Insect infestation",Asia,"Eastern Asia",1,0,0,0,0,0,0
+Natural,Biological,"Insect infestation",Asia,"South-Eastern Asia",3,0,200,0,0,200,925
+Natural,Biological,"Insect infestation",Asia,"Southern Asia",3,0,0,0,0,0,0
+Natural,Biological,"Insect infestation",Asia,"Western Asia",3,0,0,0,0,0,0
+Natural,Biological,"Insect infestation",Europe,"Eastern Europe",1,0,0,0,0,0,0
+Natural,Biological,"Insect infestation",Oceania,"Australia and New Zealand",2,0,0,0,0,0,120000
+Natural,Climatological,Drought,Africa,"Eastern Africa",129,543561,239352253,0,0,239352253,371900
+Natural,Climatological,Drought,Africa,"Middle Africa",26,3058,13779800,0,0,13779800,84500
+Natural,Climatological,Drought,Africa,"Northern Africa",19,150012,31953400,0,0,31953400,900100
+Natural,Climatological,Drought,Africa,"Southern Africa",35,500,27011615,0,0,27011615,3164739
+Natural,Climatological,Drought,Africa,"Western Africa",98,170012,81728085,0,0,81728085,507354
+Natural,Climatological,Drought,Americas,Caribbean,27,0,4731762,0,0,4731762,197639
+Natural,Climatological,Drought,Americas,"Central America",44,41,13522706,0,0,13522706,2373400
+Natural,Climatological,Drought,Americas,"Northern America",19,0,55000,0,0,55000,46645000
+Natural,Climatological,Drought,Americas,"South America",61,36,89754003,0,0,89754003,13215100
+Natural,Climatological,Drought,Asia,"Central Asia",4,0,6400000,0,0,6400000,107000
+Natural,Climatological,Drought,Asia,"Eastern Asia",49,3503534,542250000,0,0,542250000,29760420
+Natural,Climatological,Drought,Asia,"South-Eastern Asia",46,9348,60455029,0,0,60455029,1451820
+Natural,Climatological,Drought,Asia,"Southern Asia",46,6150518,1147985000,0,0,1147985000,6165372
+Natural,Climatological,Drought,Asia,"Western Asia",16,0,5452000,0,20000,5472000,487000
+Natural,Climatological,Drought,Europe,"Eastern Europe",16,2,1216194,0,0,1216194,6120000
+Natural,Climatological,Drought,Europe,"Northern Europe",3,0,0,0,0,0,1030173
+Natural,Climatological,Drought,Europe,"Russian Federation",1,1200000,5000000,0,0,5000000,0
+Natural,Climatological,Drought,Europe,"Southern Europe",17,0,9272575,0,0,9272575,16721136
+Natural,Climatological,Drought,Europe,"Western Europe",5,0,0,0,0,0,1610000
+Natural,Climatological,Drought,Oceania,"Australia and New Zealand",12,600,7080000,0,0,7080000,11496000
+Natural,Climatological,Drought,Oceania,Melanesia,9,84,3301835,0,0,3301835,90000
+Natural,Climatological,Drought,Oceania,Micronesia,3,0,119184,0,0,119184,0
+Natural,Climatological,Drought,Oceania,Polynesia,3,0,0,0,0,0,0
+Natural,Climatological,Wildfire,Africa,"Eastern Africa",3,49,0,28,3000,3028,0
+Natural,Climatological,Wildfire,Africa,"Middle Africa",5,12,57088,0,3645,60733,0
+Natural,Climatological,Wildfire,Africa,"Northern Africa",3,77,0,0,0,0,0
+Natural,Climatological,Wildfire,Africa,"Southern Africa",10,130,2500,530,5850,8880,440000
+Natural,Climatological,Wildfire,Africa,"Western Africa",8,10,6700,200,14093,20993,0
+Natural,Climatological,Wildfire,Americas,Caribbean,5,0,0,0,0,0,1000
+Natural,Climatological,Wildfire,Americas,"Central America",14,110,18636,0,0,18636,171200
+Natural,Climatological,Wildfire,Americas,"Northern America",94,1400,901260,639,44230,946129,27308100
+Natural,Climatological,Wildfire,Americas,"South America",31,111,310575,604,6217,317396,1080000
+Natural,Climatological,Wildfire,Asia,"Central Asia",1,0,8000,0,0,8000,0
+Natural,Climatological,Wildfire,Asia,"Eastern Asia",45,292,65114,303,10635,76052,1932800
+Natural,Climatological,Wildfire,Asia,"South-Eastern Asia",20,329,3502552,478,23000,3526030,10644000
+Natural,Climatological,Wildfire,Asia,"Southern Asia",7,94,0,0,54000,54000,11700
+Natural,Climatological,Wildfire,Asia,"Western Asia",10,60,20700,77,650,21427,315000
+Natural,Climatological,Wildfire,Europe,"Eastern Europe",31,220,110000,2345,4005,116350,2340210
+Natural,Climatological,Wildfire,Europe,"Northern Europe",1,1,0,0,0,0,150000
+Natural,Climatological,Wildfire,Europe,"Russian Federation",1,0,0,0,0,0,0
+Natural,Climatological,Wildfire,Europe,"Southern Europe",56,280,1173708,460,4642,1178810,10605421
+Natural,Climatological,Wildfire,Europe,"Western Europe",13,112,6250,161,6,6417,10000
+Natural,Climatological,Wildfire,Oceania,"Australia and New Zealand",38,499,69894,1134,19892,90920,3486194
+Natural,Climatological,Wildfire,Oceania,Melanesia,1,0,8000,0,0,8000,0
+Natural,Climatological,Wildfire,Oceania,Polynesia,1,0,1000,0,0,1000,31650
+Natural,Extra-terrestrial,Impact,Europe,"Eastern Europe",1,0,300000,1491,0,301491,33000
+Natural,Geophysical,Earthquake,Africa,"Eastern Africa",34,557,184345,2037,75335,261717,336570
+Natural,Geophysical,Earthquake,Africa,"Middle Africa",4,50,20355,666,1750,22771,7200
+Natural,Geophysical,Earthquake,Africa,"Northern Africa",32,20421,611953,56693,838409,1507055,11995929
+Natural,Geophysical,Earthquake,Africa,"Southern Africa",9,71,3285,165,0,3450,20000
+Natural,Geophysical,Earthquake,Africa,"Western Africa",2,292,20000,1436,0,21436,0
+Natural,Geophysical,Earthquake,Americas,Caribbean,14,223971,3498029,300179,55,3798263,8075000
+Natural,Geophysical,Earthquake,Americas,"Central America",91,56628,10545696,163191,1932564,12641451,12138250
+Natural,Geophysical,Earthquake,Americas,"Northern America",42,2914,41714,13294,20239,75247,41741670
+Natural,Geophysical,Earthquake,Americas,"South America",134,155829,15653556,283165,2424095,18360816,41287886
+Natural,Geophysical,Earthquake,Asia,"Central Asia",22,189,264731,954,40597,306282,186500
+Natural,Geophysical,Earthquake,Asia,"Eastern Asia",229,1087854,71920317,836500,4939664,77696481,485071157
+Natural,Geophysical,Earthquake,Asia,"South-Eastern Asia",158,218128,13289685,195213,1571191,15056089,14345874
+Natural,Geophysical,Earthquake,Asia,"Southern Asia",219,435496,37745962,663778,8289580,46699320,28885743
+Natural,Geophysical,Earthquake,Asia,"Western Asia",94,91241,6794405,100423,1253890,8148718,27088073
+Natural,Geophysical,Earthquake,Europe,"Eastern Europe",32,4827,228633,13479,217740,459852,2561520
+Natural,Geophysical,Earthquake,Europe,"Northern Europe",5,1,4629,8,69,4706,84000
+Natural,Geophysical,Earthquake,Europe,"Russian Federation",26,155400,1540000,16576,753000,2309576,16869800
+Natural,Geophysical,Earthquake,Europe,"Southern Europe",92,118067,2387694,23935,402028,2813657,58629016
+Natural,Geophysical,Earthquake,Europe,"Western Europe",9,60,2650,112,200,2962,362000
+Natural,Geophysical,Earthquake,Oceania,"Australia and New Zealand",13,471,643010,1726,720,645456,25797344
+Natural,Geophysical,Earthquake,Oceania,Melanesia,33,2751,49428,1055,18900,69383,10875
+Natural,Geophysical,Earthquake,Oceania,Micronesia,1,0,0,71,0,71,120000
+Natural,Geophysical,Earthquake,Oceania,Polynesia,6,197,13274,342,500,14116,134740
+Natural,Geophysical,"Mass movement (dry)",Africa,"Eastern Africa",1,13,0,0,0,0,0
+Natural,Geophysical,"Mass movement (dry)",Africa,"Northern Africa",3,163,300,72,625,997,0
+Natural,Geophysical,"Mass movement (dry)",Africa,"Western Africa",1,46,200,0,0,200,0
+Natural,Geophysical,"Mass movement (dry)",Americas,Caribbean,1,40,0,0,0,0,0
+Natural,Geophysical,"Mass movement (dry)",Americas,"Central America",3,69,2037,0,991,3028,0
+Natural,Geophysical,"Mass movement (dry)",Americas,"Northern America",8,305,0,91,3500,3591,0
+Natural,Geophysical,"Mass movement (dry)",Americas,"South America",6,2307,2250,36,125,2411,200000
+Natural,Geophysical,"Mass movement (dry)",Asia,"Central Asia",2,13,0,0,400,400,0
+Natural,Geophysical,"Mass movement (dry)",Asia,"Eastern Asia",7,500,5000,135,340,5475,8000
+Natural,Geophysical,"Mass movement (dry)",Asia,"South-Eastern Asia",6,677,651,50,0,701,1000
+Natural,Geophysical,"Mass movement (dry)",Asia,"Southern Asia",6,374,0,0,0,0,0
+Natural,Geophysical,"Mass movement (dry)",Asia,"Western Asia",2,281,1000,69,0,1069,0
+Natural,Geophysical,"Mass movement (dry)",Europe,"Eastern Europe",2,60,1750,0,0,1750,2600
+Natural,Geophysical,"Mass movement (dry)",Europe,"Russian Federation",4,145,8500,6,0,8506,0
+Natural,Geophysical,"Mass movement (dry)",Europe,"Western Europe",3,64,0,52,0,52,0
+Natural,Geophysical,"Mass movement (dry)",Oceania,Melanesia,2,86,1000,0,0,1000,0
+Natural,Geophysical,"Volcanic activity",Africa,"Eastern Africa",10,88,316000,0,5200,321200,0
+Natural,Geophysical,"Volcanic activity",Africa,"Middle Africa",6,2130,12500,837,170510,183847,9000
+Natural,Geophysical,"Volcanic activity",Africa,"Western Africa",2,0,3800,6,5000,8806,0
+Natural,Geophysical,"Volcanic activity",Americas,Caribbean,10,31599,110200,3,200,110403,8000
+Natural,Geophysical,"Volcanic activity",Americas,"Central America",37,13227,666916,810,18880,686606,124722
+Natural,Geophysical,"Volcanic activity",Americas,"Northern America",2,90,0,0,2500,2500,860000
+Natural,Geophysical,"Volcanic activity",Americas,"South America",40,22942,1682653,5026,9600,1697279,1879975
+Natural,Geophysical,"Volcanic activity",Asia,"Eastern Asia",16,578,98859,89,1100,100048,132000
+Natural,Geophysical,"Volcanic activity",Asia,"South-Eastern Asia",82,21306,3009261,4919,102800,3116980,762351
+Natural,Geophysical,"Volcanic activity",Asia,"Western Asia",1,6,0,15,0,15,0
+Natural,Geophysical,"Volcanic activity",Europe,"Northern Europe",5,0,5200,0,0,5200,41200
+Natural,Geophysical,"Volcanic activity",Europe,"Russian Federation",1,0,0,0,0,0,0
+Natural,Geophysical,"Volcanic activity",Europe,"Southern Europe",5,735,7000,24,14000,21024,3100
+Natural,Geophysical,"Volcanic activity",Oceania,"Australia and New Zealand",2,150,70,0,0,70,0
+Natural,Geophysical,"Volcanic activity",Oceania,Melanesia,21,3515,212679,31,46000,258710,110000
+Natural,Geophysical,"Volcanic activity",Oceania,Polynesia,1,0,2500,0,0,2500,0
+Natural,Hydrological,Flood,Africa,"Eastern Africa",347,11340,30607554,3183,1704311,32315048,2059506
+Natural,Hydrological,Flood,Africa,"Middle Africa",113,1443,3434919,1985,566953,4003857,36059
+Natural,Hydrological,Flood,Africa,"Northern Africa",150,9310,8495395,20725,1681582,10197702,3070317
+Natural,Hydrological,Flood,Africa,"Southern Africa",63,1643,2237853,377,64885,2303115,1731619
+Natural,Hydrological,Flood,Africa,"Western Africa",237,3315,20865761,4546,2076093,22946400,1077222
+Natural,Hydrological,Flood,Americas,Caribbean,139,6269,4188399,1277,193289,4382965,980484
+Natural,Hydrological,Flood,Americas,"Central America",224,47676,8771873,20116,286585,9078574,6864660
+Natural,Hydrological,Flood,Americas,"Northern America",212,2971,12547766,414,52700,12600880,76479160
+Natural,Hydrological,Flood,Americas,"South America",483,47913,61842495,22997,3160750,65026242,32579138
+Natural,Hydrological,Flood,Asia,"Central Asia",44,1676,921711,1122,28295,951128,1050450
+Natural,Hydrological,Flood,Asia,"Eastern Asia",412,6619642,1975284154,838411,45783194,2021905759,251672069
+Natural,Hydrological,Flood,Asia,"South-Eastern Asia",575,22906,146606309,261739,2027661,148895709,62762088
+Natural,Hydrological,Flood,Asia,"Southern Asia",708,159133,1238122215,125270,29519955,1267767440,100043090
+Natural,Hydrological,Flood,Asia,"Western Asia",147,4266,5106333,1203,861270,5968806,6852776
+Natural,Hydrological,Flood,Europe,"Eastern Europe",200,3281,8680633,10369,299471,8990473,25287978
+Natural,Hydrological,Flood,Europe,"Northern Europe",47,114,416865,8,30000,446873,24610030
+Natural,Hydrological,Flood,Europe,"Russian Federation",17,148,96208,0,18586,114794,3395900
+Natural,Hydrological,Flood,Europe,"Southern Europe",190,3341,4429509,17332,1573812,6020653,40708682
+Natural,Hydrological,Flood,Europe,"Western Europe",119,2440,1037792,164,200,1038156,44233896
+Natural,Hydrological,Flood,Oceania,"Australia and New Zealand",97,350,336339,87,7400,343826,14826000
+Natural,Hydrological,Flood,Oceania,Melanesia,34,206,836047,2,100000,936049,294875
+Natural,Hydrological,Flood,Oceania,Micronesia,5,0,1180,0,85,1265,0
+Natural,Hydrological,Flood,Oceania,Polynesia,2,6,0,3,0,3,51500
+Natural,Hydrological,Landslide,Africa,"Eastern Africa",18,693,21141,137,12272,33550,0
+Natural,Hydrological,Landslide,Africa,"Middle Africa",8,410,1248,7,1596,2851,0
+Natural,Hydrological,Landslide,Africa,"Northern Africa",2,16,10000,46,2866,12912,0
+Natural,Hydrological,Landslide,Africa,"Southern Africa",1,34,0,0,0,0,0
+Natural,Hydrological,Landslide,Africa,"Western Africa",6,82,480,23,11800,12303,0
+Natural,Hydrological,Landslide,Americas,Caribbean,7,443,1375,60,1000,2435,0
+Natural,Hydrological,Landslide,Americas,"Central America",26,4146,10114,157,51220,61491,500000
+Natural,Hydrological,Landslide,Americas,"Northern America",5,658,125,15,150,290,20000
+Natural,Hydrological,Landslide,Americas,"South America",133,15232,5265956,4734,188890,5459580,2366727
+Natural,Hydrological,Landslide,Asia,"Central Asia",22,686,90450,43,75052,165545,252200
+Natural,Hydrological,Landslide,Asia,"Eastern Asia",103,7243,2246717,2148,31489,2280354,2347890
+Natural,Hydrological,Landslide,Asia,"South-Eastern Asia",102,5500,807219,1143,136477,944839,156326
+Natural,Hydrological,Landslide,Asia,"Southern Asia",123,9697,1010328,1345,3708485,4720158,87500
+Natural,Hydrological,Landslide,Asia,"Western Asia",17,626,10924,225,2385,13534,26000
+Natural,Hydrological,Landslide,Europe,"Eastern Europe",11,449,800,8,330,1138,0
+Natural,Hydrological,Landslide,Europe,"Northern Europe",7,276,63,70,0,133,16789
+Natural,Hydrological,Landslide,Europe,"Russian Federation",6,12282,0,0,2500,2500,423000
+Natural,Hydrological,Landslide,Europe,"Southern Europe",19,2764,14113,362,5735,20210,1395510
+Natural,Hydrological,Landslide,Europe,"Western Europe",29,891,14431,26,60,14517,1273590
+Natural,Hydrological,Landslide,Oceania,"Australia and New Zealand",3,28,700,1,0,701,2466
+Natural,Hydrological,Landslide,Oceania,Melanesia,12,495,1063,40,18000,19103,0
+Natural,Hydrological,Landslide,Oceania,Polynesia,3,23,500,11,0,511,0
+Natural,Meteorological,"Extreme temperature ",Africa,"Northern Africa",8,222,7500,171,0,7671,809
+Natural,Meteorological,"Extreme temperature ",Africa,"Southern Africa",2,52,0,0,0,0,0
+Natural,Meteorological,"Extreme temperature ",Africa,"Western Africa",3,78,1000000,0,0,1000000,47000
+Natural,Meteorological,"Extreme temperature ",Americas,"Central America",23,1195,132634,0,16000,148634,584850
+Natural,Meteorological,"Extreme temperature ",Americas,"Northern America",41,5711,200,31,0,231,18085000
+Natural,Meteorological,"Extreme temperature ",Americas,"South America",49,2615,3722878,1824867,5247,5552992,2095000
+Natural,Meteorological,"Extreme temperature ",Asia,"Central Asia",8,31,2607500,62,0,2607562,840000
+Natural,Meteorological,"Extreme temperature ",Asia,"Eastern Asia",24,1136,82731286,101136,233000,83065422,21492200
+Natural,Meteorological,"Extreme temperature ",Asia,"South-Eastern Asia",1,63,1000000,0,0,1000000,0
+Natural,Meteorological,"Extreme temperature ",Asia,"Southern Asia",110,24785,887952,3234,0,891186,562133
+Natural,Meteorological,"Extreme temperature ",Asia,"Western Asia",16,181,20000,962,0,20962,951000
+Natural,Meteorological,"Extreme temperature ",Europe,"Eastern Europe",97,62903,947974,22240,0,970214,1665450
+Natural,Meteorological,"Extreme temperature ",Europe,"Northern Europe",20,1256,0,47,0,47,0
+Natural,Meteorological,"Extreme temperature ",Europe,"Southern Europe",61,40983,416078,1129,1340,418547,6659901
+Natural,Meteorological,"Extreme temperature ",Europe,"Western Europe",53,39742,10000,365,0,10365,7862000
+Natural,Meteorological,"Extreme temperature ",Oceania,"Australia and New Zealand",7,509,4600000,2784,0,4602784,200000
+Natural,Meteorological,Storm,Africa,"Eastern Africa",141,4574,13041876,9273,1796459,14847608,3200693
+Natural,Meteorological,Storm,Africa,"Middle Africa",20,95,101416,3010,37791,142217,282
+Natural,Meteorological,Storm,Africa,"Northern Africa",15,239,142107,198,0,142305,301050
+Natural,Meteorological,Storm,Africa,"Southern Africa",37,330,1272531,1340,20080,1293951,818193
+Natural,Meteorological,Storm,Africa,"Western Africa",29,549,119200,606,41360,161166,8900
+Natural,Meteorological,Storm,Americas,Caribbean,318,30743,20230057,19213,2095233,22344503,35186748
+Natural,Meteorological,Storm,Americas,"Central America",195,41220,15058866,23728,775631,15858225,42538376
+Natural,Meteorological,Storm,Americas,"Northern America",633,30955,13686500,14723,440927,14142150,606161480
+Natural,Meteorological,Storm,Americas,"South America",86,1818,1634816,4133,225557,1864506,764050
+Natural,Meteorological,Storm,Asia,"Central Asia",5,116,9905,0,1500,11405,3434
+Natural,Meteorological,Storm,Asia,"Eastern Asia",646,243315,491706953,209381,15564033,507480367,169408231
+Natural,Meteorological,Storm,Asia,"South-Eastern Asia",510,216872,205205783,104503,11208474,216518760,32876481
+Natural,Meteorological,Storm,Asia,"Southern Asia",405,813425,173482316,963404,20462613,194908333,27137852
+Natural,Meteorological,Storm,Asia,"Western Asia",50,551,3416073,8893,11500,3436466,5372050
+Natural,Meteorological,Storm,Europe,"Eastern Europe",78,495,2729765,1728,35417,2766910,2021600
+Natural,Meteorological,Storm,Europe,"Northern Europe",93,457,1107780,116,0,1107896,23249539
+Natural,Meteorological,Storm,Europe,"Russian Federation",5,464,10000,0,0,10000,24000
+Natural,Meteorological,Storm,Europe,"Southern Europe",71,692,605910,236,1446,607592,9344900
+Natural,Meteorological,Storm,Europe,"Western Europe",215,1302,4295740,1372,800,4297912,66594706
+Natural,Meteorological,Storm,Oceania,"Australia and New Zealand",115,292,4093482,1017,10662,4105161,19364904
+Natural,Meteorological,Storm,Oceania,Melanesia,101,1311,1694600,1546,133607,1829753,1187536
+Natural,Meteorological,Storm,Oceania,Micronesia,22,82,28694,731,23277,52702,1007645
+Natural,Meteorological,Storm,Oceania,Polynesia,63,448,561162,382,82407,643951,1043579
+Technological,Technological,"Industrial accident",Africa,"Eastern Africa",23,1012,1750,932,0,2682,3700
+Technological,Technological,"Industrial accident",Africa,"Middle Africa",17,434,0,136,0,136,0
+Technological,Technological,"Industrial accident",Africa,"Northern Africa",16,384,0,4487,4000,8487,818400
+Technological,Technological,"Industrial accident",Africa,"Southern Africa",20,1261,1835,406,0,2241,67700
+Technological,Technological,"Industrial accident",Africa,"Western Africa",55,3714,114431,1305,350,116086,18700
+Technological,Technological,"Industrial accident",Americas,Caribbean,8,59,4500,790,0,5290,22400
+Technological,Technological,"Industrial accident",Americas,"Central America",48,1395,225189,11036,23160,259385,1840800
+Technological,Technological,"Industrial accident",Americas,"Northern America",98,1523,600456,7645,300,608401,21567500
+Technological,Technological,"Industrial accident",Americas,"South America",58,4931,593993,3485,966,598444,87000
+Technological,Technological,"Industrial accident",Asia,"Central Asia",6,144,1747,619,0,2366,8400
+Technological,Technological,"Industrial accident",Asia,"Eastern Asia",553,18434,309291,36716,320000,666007,342311
+Technological,Technological,"Industrial accident",Asia,"South-Eastern Asia",76,2243,57181,4653,41030,102864,126642
+Technological,Technological,"Industrial accident",Asia,"Southern Asia",153,9374,650665,109105,0,759770,877980
+Technological,Technological,"Industrial accident",Asia,"Western Asia",49,2859,509,7087,3,7599,79000
+Technological,Technological,"Industrial accident",Europe,"Eastern Europe",82,1915,1002,1898,10120,13020,2350000
+Technological,Technological,"Industrial accident",Europe,"Northern Europe",23,796,17600,305,1461,19366,1345300
+Technological,Technological,"Industrial accident",Europe,"Russian Federation",11,1240,537000,1836,0,538836,2800000
+Technological,Technological,"Industrial accident",Europe,"Southern Europe",30,1154,58434,21532,190000,269966,10095407
+Technological,Technological,"Industrial accident",Europe,"Western Europe",75,3969,35921,6279,0,42200,597800
+Technological,Technological,"Industrial accident",Oceania,"Australia and New Zealand",6,40,15500,645,0,16145,0
+Technological,Technological,"Industrial accident",Oceania,Melanesia,1,11,0,60,0,60,12000
+Technological,Technological,"Miscellaneous accident",Africa,"Eastern Africa",66,1380,69641,3276,173564,246481,4450
+Technological,Technological,"Miscellaneous accident",Africa,"Middle Africa",27,867,10509,3844,6900,21253,0
+Technological,Technological,"Miscellaneous accident",Africa,"Northern Africa",61,1606,5627,2101,9335,17063,15500
+Technological,Technological,"Miscellaneous accident",Africa,"Southern Africa",17,322,534,302,17000,17836,0
+Technological,Technological,"Miscellaneous accident",Africa,"Western Africa",57,2389,120062,2093,24755,146910,20000
+Technological,Technological,"Miscellaneous accident",Americas,Caribbean,24,655,523215,448,855,524518,50300
+Technological,Technological,"Miscellaneous accident",Americas,"Central America",43,1728,998049,2077,888,1001014,11224
+Technological,Technological,"Miscellaneous accident",Americas,"Northern America",100,7627,1662,5689,9031,16382,264600
+Technological,Technological,"Miscellaneous accident",Americas,"South America",82,5633,284128,7657,6092,297877,96534
+Technological,Technological,"Miscellaneous accident",Asia,"Central Asia",13,293,20800,370,7160,28330,0
+Technological,Technological,"Miscellaneous accident",Asia,"Eastern Asia",188,14400,44239,9196,17781,71216,257077
+Technological,Technological,"Miscellaneous accident",Asia,"South-Eastern Asia",192,3560,457557,6898,212351,676806,474995
+Technological,Technological,"Miscellaneous accident",Asia,"Southern Asia",203,9364,267015,13888,57450,338353,183320
+Technological,Technological,"Miscellaneous accident",Asia,"Western Asia",76,9819,10259,7179,2750,20188,289220
+Technological,Technological,"Miscellaneous accident",Europe,"Eastern Europe",75,2041,6849,3545,0,10394,11200
+Technological,Technological,"Miscellaneous accident",Europe,"Northern Europe",22,855,200,1605,0,1805,2300
+Technological,Technological,"Miscellaneous accident",Europe,"Russian Federation",8,576,0,13,0,13,0
+Technological,Technological,"Miscellaneous accident",Europe,"Southern Europe",34,1033,13087,1960,1000,16047,253000
+Technological,Technological,"Miscellaneous accident",Europe,"Western Europe",61,2380,8555,3648,0,12203,733300
+Technological,Technological,"Miscellaneous accident",Oceania,"Australia and New Zealand",9,106,660,9,672,1341,3300
+Technological,Technological,"Miscellaneous accident",Oceania,Micronesia,1,1,12000,4,0,12004,0
+Technological,Technological,"Miscellaneous accident",Oceania,Polynesia,2,18,0,0,0,0,0
+Technological,Technological,"Transport accident",Africa,"Eastern Africa",370,14417,52161,7075,0,59236,40000
+Technological,Technological,"Transport accident",Africa,"Middle Africa",245,10361,2348,3978,0,6326,0
+Technological,Technological,"Transport accident",Africa,"Northern Africa",371,12951,1950,6243,0,8193,0
+Technological,Technological,"Transport accident",Africa,"Southern Africa",152,2987,603,5464,0,6067,0
+Technological,Technological,"Transport accident",Africa,"Western Africa",477,18039,818,4807,0,5625,2800
+Technological,Technological,"Transport accident",Americas,Caribbean,94,6170,877,1645,0,2522,0
+Technological,Technological,"Transport accident",Americas,"Central America",147,4571,4,4158,0,4162,0
+Technological,Technological,"Transport accident",Americas,"Northern America",232,12227,7100,15023,6000,28123,258000
+Technological,Technological,"Transport accident",Americas,"South America",468,14204,1358,8342,0,9700,62000
+Technological,Technological,"Transport accident",Asia,"Central Asia",18,521,3,63,0,66,0
+Technological,Technological,"Transport accident",Asia,"Eastern Asia",381,22136,32309,11698,9250,53257,462900
+Technological,Technological,"Transport accident",Asia,"South-Eastern Asia",440,26675,7962,5940,0,13902,3300
+Technological,Technological,"Transport accident",Asia,"Southern Asia",1032,46720,1582,22376,0,23958,38000
+Technological,Technological,"Transport accident",Asia,"Western Asia",242,8293,678,3756,0,4434,0
+Technological,Technological,"Transport accident",Europe,"Eastern Europe",182,6030,201,2286,0,2487,0
+Technological,Technological,"Transport accident",Europe,"Northern Europe",98,5605,2355,4631,0,6986,0
+Technological,Technological,"Transport accident",Europe,"Russian Federation",38,2825,0,784,200,984,0
+Technological,Technological,"Transport accident",Europe,"Southern Europe",211,10336,1922,4410,100,6432,145700
+Technological,Technological,"Transport accident",Europe,"Western Europe",161,6758,455,4452,0,4907,120000
+Technological,Technological,"Transport accident",Oceania,"Australia and New Zealand",29,1157,127,334,0,461,0
+Technological,Technological,"Transport accident",Oceania,Melanesia,10,420,24,4,0,28,0
+Technological,Technological,"Transport accident",Oceania,Micronesia,1,228,0,0,0,0,0
+Technological,Technological,"Transport accident",Oceania,Polynesia,2,95,54,0,0,54,0
