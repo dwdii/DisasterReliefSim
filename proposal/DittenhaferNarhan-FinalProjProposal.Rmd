@@ -54,21 +54,39 @@ bibHdxWeb <- bibentry(bibtype="Misc",
                       year=2016,
                       url="https://data.hdx.rwlabs.org/")
 
+bibCREDWeb <- bibentry(bibtype="Misc",
+                      author=person(family="EM-Dat"),
+                      title="International Disaster Database",
+                      publisher="Centre for Research on the Epidemiology of Disasters",
+                      year=2016,
+                      url="http://www.emdat.be/advanced_search/index.html")
+
   
 ```
 # Problem Statement & Research Questions
 
 **TBD**
 
-Planning for disaster relief scenarios can be a tricky endevour. Where will the next disaster occur? When? On what scale? The historical record can be useful to understand a range of possible answers, but this raises more questions. How many supplies should be pre-staged in anticipation of a future disaster? How might a given set of supplies be useful for multiple disasters? Questions like these are considered in current research as shown in the papers reviewed for this proposal.
+Disasters can be defined as crises that overwhelm, at least for a time, people’s capacities to manage and cope. 
+
+Planning for disaster relief scenarios can be a tricky endeavour. Where will the next disaster occur? When? On what scale? The historical record can be useful to understand a range of possible answers, but this raises more questions. How many supplies should be pre-positioned in anticipation of a future disaster? What type of supplies should be stocked? How might a given set of supplies be useful for multiple disasters? Questions like these are considered in current research as shown in the papers reviewed for this proposal.
+
+
+
 
 # Statement of Objectives
 
-We plan to use a combination of R and Simio to develop and execute a simulation model inorder to ... **TBD** 
+The humanitarian logistic chain entails procurement of supplies, storage, transportation, in-country arrival and custom clearance, in-country storage and transportation and distribution. We plan to use a combination of R and Simio to develop and execute a simulation model in order to model key components in this logistics chain.
+
+The *system* being modelled will be the aspects of the humanitarian logistics chain associated with .... (perhaps global hubs storage locations --> transport to disaster country --> custom entry --> local storage --> local transportation). JN comment: may need to cut this down to what is doable in the time we have.
+
+*Events* will include the occurrence of disasters.
 
 # Data Set(s)
 
-The Humanitarian Data Exchange provides many different data sets which could be benefitial for this project `r citep(bibHdxWeb)`.
+The Humanitarian Data Exchange provides many different data sets which could be beneficial for this project `r citep(bibHdxWeb)`.
+
+Disaster profiles from 1900 to 2015 can be accessed from the Centre for Research on the Epidemiology of Disasters `r citep(bibCREDWeb)`. These data will be used to profile the probability distribution of disasters regionally. We will leverage this information when simulating disaster occurrences that will demand the movement of relief supplies.
 
 **TBD**
 
@@ -80,7 +98,7 @@ This paper describes a model complete with objective function an array of constr
 
 ## Emergency Logistics Planning in Natural Disasters
 
-This paper describes a model for delivering disaster relief via multiple transporation methods `r citep(bibOzdamarEtAl)`. The model focuses on minimizing f demand for various disaster relie commondities at various disaster locations, while considering an array of constraints. The model considers a disaster that emcompasses a region which includes the supply depots whereby a given delivery of disaster relief to one location might simultaneously be a pickup of disaster relief destined for another location in the same disaster. One might imagine an earthquake in which one area has excess food but not enough water, and logistics planners desire to optimizes the sharing of supplies.
+This paper describes a model for delivering disaster relief via multiple transportation methods `r citep(bibOzdamarEtAl)`. The model focuses on minimizing f demand for various disaster relief commodities at various disaster locations, while considering an array of constraints. The model considers a disaster that encompasses a region which includes the supply depots whereby a given delivery of disaster relief to one location might simultaneously be a pickup of disaster relief destined for another location in the same disaster. One might imagine an earthquake in which one area has excess food but not enough water, and logistics planners desire to optimizes the sharing of supplies.
 
 ## Evaluation
 
