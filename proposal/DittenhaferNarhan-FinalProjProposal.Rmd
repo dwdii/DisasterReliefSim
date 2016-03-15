@@ -80,7 +80,18 @@ The humanitarian logistic chain entails procurement of supplies, storage, transp
 
 The *system* being modelled will be the aspects of the humanitarian logistics chain associated with .... (perhaps global hubs storage locations --> transport to disaster country --> custom entry --> local storage --> local transportation). JN comment: may need to cut this down to what is doable in the time we have.
 
-*Events* will include the occurrence of disasters.
+*Entities* 
+
+- Supplier with *attributes* one-time seller (less reliable) or supply chain partner (more reliable)
+
+- Warehouse with *atrributes* global warehouse or local, storage capacity
+
+- Plane with *attributes* fast-speed, smaller capacity
+- Ship with *attrbutes* slow-speed, larger capacity
+- Truck with *attributes*, slow-speed, small capacity
+
+
+*Events* will include the occurrence of disasters, theft of supplies
 
 # Data Set(s)
 
