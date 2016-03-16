@@ -64,11 +64,13 @@ Planning for disaster relief scenarios can be a tricky endevour. Where will the 
 
 # Statement of Objectives
 
-We plan to use a combination of R and Simio to develop and execute a simulation model inorder to ... **TBD** 
+**TBD** 
+
+We plan to use a combination of R and Simio to develop and execute a simulation model inorder to model a single disaster across multiple locations in need of relief. Relief will be delivered by a fixed number of vehicles (with a given capacity per trip). A single supply depot is initially considered, but we may expand to multiple (and decide which one is closer and has inventory to service a relief need), if time allows. Additionally, we will consider depot supply restocking during the disaster as well. 
 
 # Data Set(s)
 
-The Humanitarian Data Exchange provides many different data sets which could be benefitial for this project `r citep(bibHdxWeb)`.
+The Humanitarian Data Exchange provides many different data sets which could be benefitial for this project `r citep(bibHdxWeb)`. 
 
 **TBD**
 
