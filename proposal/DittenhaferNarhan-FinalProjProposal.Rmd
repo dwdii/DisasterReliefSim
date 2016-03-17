@@ -67,18 +67,18 @@ bibCREDWeb <- bibentry(bibtype="Misc",
 
 Disasters can be defined as crises that overwhelm, at least for a time, people’s capacities to manage and cope. Under emergency contexts, the ability to plan and move goods and materials is strained. Supply chain systems generally work best in established response scenarios where suppliers, transportation systems, customs situations and the like are in place and stable. However in most emergency responses new suppliers may need to be found, transportation networks may be compromised by the emergency and customs regulations are often in flux during these times. 
 
-Planning for disaster relief scenarios can thus be seen to be challenging. Humanitarian agencies, constrained by funding and capacity will often need to make difficult decisions. Where will the next disaster occur? When? On what scale? How best should resources be applied to enable effective responses while still having the monetary resources to do the job? Historical records can be useful to understand a range of possible answers, but this raises more questions. How many supplies should be pre-positioned in anticipation of a future disaster? Where should supplies be stocked? What type of supplies should be stocked and what would the shelf life be for supplies? How might a given set of supplies be useful for multiple disasters? Some of these questions are considered in the literature reviewed for this proposal, however it is clear that modelling the nuances of the humanitarian logistic chain is still an area undeserved by academic inquiry. As such, we will contribute to the to the field by applying simulation techniques to the problem of humanitarian logistics.
+Planning for disaster relief scenarios can thus be seen as challenging. Humanitarian agencies, constrained by funding and capacity will often need to make difficult decisions. How best should resources be applied to enable effective responses to disasters while still having the monetary resources to do the job? Historical records can be useful to understand a range of possible answers, but this raises more questions. How many supplies should be pre-positioned in anticipation of a future disaster? What type of supplies should be stocked and where? Some of these questions are considered in the literature reviewed for this proposal, however it is clear that modelling the nuances of the humanitarian logistic chain (HLC) is still an area underserved by academic inquiry. As such, we will contribute to the field by applying simulation techniques to the problem of humanitarian logistics.
 
 # Statement of Objectives
 
-The humanitarian logistic chain entails a complex mix of supplier relations for procurement; international storage of supplies at global or regional hubs; international transportation using cargo planes, ships and the like; in-country arrival procedures, duty taxes, graft and custom clearance; in-country storage at different geographic levels, transportation using aircraft, trucks, animals and humans; fraud, theft and spoilage; and ultimately, distribution to affected communities. 
+The HLC entails a complex mix of supplier relations for procurement; international storage of supplies at global or regional hubs; international transportation; in-country arrival procedures, taxes, graft and custom clearance; in-country storage and transportation; fraud, theft and spoilage; and ultimately, distribution to affected communities. 
 
 Modelling all of these scenarios is a complex task and for the purposes of this study, we are constrained to simplifying the process to consider key components of the humanitarian logistics chain. We expect to model activities associated with the following components:
 
 ![](../images/Logistics_Chain_Modelled.png)
 
 
-The *system* being modelled will be look at these key aspects of the humanitarian logistics chain associated with a single disaster across multiple locations within a country needing relief.  We plan to use a combination of R and Simio to develop and execute a simulation model in order understand the behaviour of a humanitarian logistic chain system under various assumptions related to entity attributes and event properties as described in the following sections. 
+The *system* being modelled will include these key aspects of the HLC associated with a single disaster across multiple locations within a country.  We plan to use a combination of R and Simio to develop and execute a simulation model in order understand the behaviour of an HLC system under various entity attributes and event properties as described in the following sections. 
 
 ## Entities
 
@@ -86,26 +86,19 @@ The following entities and attributes may be considered in the simulation model:
 
 - Supplier with *attributes* one-time seller (less reliable in terms of meeting requested supplies) or supply chain partner (more reliable)
 
-- Warehouse with *attributes* being regional hub (further from distribution sites, expensive, larger storage capacity, more secure) or local - district warehouses (closer to distribution sites, cheaper, smaller storage capacity, less secure)
+- Warehouse with *attributes* distance from distribution site, fixed cost, storate capacity, probability of theft
 
-- Transportation modalities including:
-- Plane with *attributes* fast-speed, smaller capacity, cost/trip
-- Ship with *attrbutes* slow-speed, larger capacity, cost/trip
-- Truck with *attributes*, slow-speed, small capacity, cost/trip
+- Transportation modalities with *attributes* speed, capacity, fixed and variable costs (e.g per trip)
 
 - Distribution site with *attributes* accessibility to site (likely, unlikely), subject to over or under capacity (more or less beneficiaries showed up than planned for), subject to hostile theft of supplies (high, low).
 
 ## Events
 
-Events will include the occurrence of disasters, theft of supplies, and arrival of supplies at warehouse locations. We anticipate other events may be identified during the project.
+Events may include the occurrence of disasters, theft of supplies, and arrival of supplies at warehouse locations. We anticipate other events may be identified during the project.
 
 # Data Set(s)
 
-The Humanitarian Data Exchange provides many different data sets which could be beneficial for this project `r citep(bibHdxWeb)`.
-
-Disaster profiles from 1900 to 2015 can be accessed from the Centre for Research on the Epidemiology of Disasters `r citep(bibCREDWeb)`. These data will be used to profile the probability distribution of disasters regionally. We will leverage this information when simulating disaster occurrences that will demand the movement of relief supplies.
-
-Certain probability distributions may be developed to augment the simulation (such probability of theft).
+Disaster profiles from 1900 to 2015 can be accessed from the Centre for Research on the Epidemiology of Disasters `r citep(bibCREDWeb)`. These data will be used to profile the probability distribution of disasters regionally. We will leverage this information when simulating disaster occurrences that will demand the movement of relief supplies. The Humanitarian Data Exchange provides many different data sets which could be beneficial for this project `r citep(bibHdxWeb)`. Additionally, certain probability distributions may be developed to augment the simulation (such as probability of theft).
 
 # Recent Journal Papers
 
@@ -115,20 +108,11 @@ This paper describes a model complete with objective function and an array of co
 
 ## Emergency Logistics Planning in Natural Disasters
 
-This paper describes a model for delivering disaster relief via multiple transportation methods `r citep(bibOzdamarEtAl)`. The model focuses on minimizing demand for various disaster relief commodities at various disaster locations, while considering an array of constraints. The model considers a disaster that encompasses a region which includes the supply depots whereby a given delivery of disaster relief to one location might simultaneously be a pickup of disaster relief destined for another location in the same disaster. One might imagine an earthquake in which one area has excess food but not enough water, and logistics planners desire to optimizes the sharing of supplies.
+This paper describes a model for delivering disaster relief via multiple transportation methods `r citep(bibOzdamarEtAl)`. The model focuses on minimizing demand for various disaster relief commodities at various disaster locations, while considering an array of constraints. The model considers a disaster that encompasses a region which includes the supply depots whereby a given delivery of disaster relief to one location might simultaneously be a pickup of disaster relief destined for another location in the same disaster. 
 
-## Evaluation
+# Evaluation
 
-The goal in a well functioning humanitarian logistics function is to deliver the right materials, in the right place, in the right time, to the right people according to an objective that meets the Least Total Cost (LTC).
-
-Costs for the model will be defined. Some examples include:
-
-- Fixed cost: warehouse rental per month x months required
-- Variable cost: supply charge per metric ton (varies based on supplier type)
-- Fixed cost: vehicle rental cost
-- Variable cost: distribution cost = tonnage x transport_cost-per-ton
-
-In order to evaluate our model, the simulation will be executed over several iterations with various inputs and parameter values. The outputs, such as time to satisfy the delivery of relief aid while constraining costs (i.e. working toward LTC).
+The goal in a well functioning HLC is to deliver the right materials, in the right place, in the right time, to the right people according to an objective that meets the least total cost (LTC). In order to evaluate our model, the simulation will be executed over several iterations with various inputs and parameter values. The outputs, such as total cost, and time to deliver relief aid, for each iteration, will be recorded and compared.
 
 # References
 
