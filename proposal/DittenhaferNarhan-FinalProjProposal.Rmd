@@ -86,7 +86,7 @@ The following entities and attributes may be considered in the simulation model:
 
 - Supplier with *attributes* one-time seller (less reliable in terms of meeting requested supplies) or supply chain partner (more reliable)
 
-- Warehouse with *attributes* distance from distribution site, fixed cost, storate capacity, probability of theft
+- Warehouse with *attributes* distance from distribution site, fixed cost, storage capacity, probability of theft
 
 - Transportation modalities with *attributes* speed, capacity, fixed and variable costs (e.g per trip)
 
