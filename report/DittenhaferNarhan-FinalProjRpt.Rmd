@@ -26,6 +26,12 @@ We included a Supply Chain Partner which reliably provided Relief Supplies. The 
 
 The delivery vehicle, *PartnerVehicle*, was set to require a full load prior to departing for the Warehouse.
 
+### Warehouse
+
+A warehouse was added to stage disaster relief supplies.
+
+The delivery vehicle, *WarehouseVehicle*, was set to require a full load proir to departing for the distribution site.
+
 # Results
 
 # Summary
