@@ -18,6 +18,14 @@ subtitle: "DATA 604: Simulation & Modeling"
 
 # Methodology
 
+## Structure
+
+### Supply Chain Partner
+
+We included a Supply Chain Partner which reliably provided Relief Supplies. The time to deliver a shipment of supplies was made variable though the Reference Property *SupplierPartnerTravelTimeToWarehouse*. 
+
+The delivery vehicle, *PartnerVehicle*, was set to require a full load prior to departing for the Warehouse.
+
 # Results
 
 # Summary
