@@ -32,6 +32,14 @@ A warehouse was added to stage disaster relief supplies.
 
 The delivery vehicle, *WarehouseVehicle*, was set to require a full load proir to departing for the distribution site.
 
+Selection Weight on the Paths from the Warehouse to the Distribution Sites was set to dynamically adjust based on the number of Disaster Victims waiting for Relief Supplies.
+
+### Disaster Victims
+
+Initially, the "Disaster" is set to begin 6 hours (0.25 days) into the simulation. This gives some time to prime the pump and prestage relief supplies through the warehouse. 
+
+**TBD** We may need to adjust this... 
+
 # Results
 
 # Summary
