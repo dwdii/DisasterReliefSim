@@ -22,13 +22,17 @@ subtitle: "DATA 604: Simulation & Modeling"
 
 ### Supply Chain Partner
 
-We included a Supply Chain Partner which reliably provided Relief Supplies. The time to deliver a shipment of supplies was made variable though the Reference Property *SupplierPartnerTravelTimeToWarehouse*. 
+We included a Supply Chain Partner which reliably provided Relief Supplies. The following variables (Referenced Properties) were created to facilitate the studey: 
+
+* The time to deliver a shipment of supplies:  *SupplierTravelTimeToWarehouse*. 
+
+* The maximum number of relief supplies which the supplier will provide: *SupplierMaximumArrivals* 
 
 The delivery vehicle, *PartnerVehicle*, was set to require a full load prior to departing for the Warehouse.
 
 ### Warehouse
 
-A warehouse was added to stage disaster relief supplies.
+A warehouse was added to store disaster relief supplies in preparation for a disaster.
 
 The delivery vehicle, *WarehouseVehicle*, was set to require a full load proir to departing for the distribution site.
 
