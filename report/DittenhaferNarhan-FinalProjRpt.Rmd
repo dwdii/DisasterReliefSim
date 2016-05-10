@@ -20,9 +20,9 @@ subtitle: "DATA 604: Simulation & Modeling"
 
 ## Structure
 
-### Supply Chain Partner
+### Supplier
 
-We included a Supply Chain Partner which reliably provided Relief Supplies. The following variables (Referenced Properties) were created to facilitate the studey: 
+A Supplier entity is included in the simulation model. This entity is the *Source* of Relief Supplies. This entity is used, through design of experiements, to simulate both reliable partner suppliers as well as adhoc suppliers (more variability in their supply). The following variables (Referenced Properties) were created to facilitate the study: 
 
 * The time to deliver a shipment of supplies:  *SupplierTravelTimeToWarehouse*. 
 
@@ -30,21 +30,58 @@ We included a Supply Chain Partner which reliably provided Relief Supplies. The 
 
 The delivery vehicle, *PartnerVehicle*, was set to require a full load prior to departing for the Warehouse.
 
+* The capacity of the *PartnerVehicle*: *SupplierVehicleCapacity*
+
 ### Warehouse
 
-A warehouse was added to store disaster relief supplies in preparation for a disaster.
+A Warehouse was added to store disaster relief supplies in preparation for a disaster. This entity was modeled as a *Server* which processes incoming **Relief Supplies** and stores them in a ready state for movement to Distribution Site.
 
-The delivery vehicle, *WarehouseVehicle*, was set to require a full load proir to departing for the distribution site.
+The following variables were created to facilitate design of experiments:
 
-Selection Weight on the Paths from the Warehouse to the Distribution Sites was set to dynamically adjust based on the number of Disaster Victims waiting for Relief Supplies.
+* The storage capacity of the warehouse: *WarehouseStorageCapacity*
 
-### Disaster Victims
+The delivery vehicle, *WarehouseVehicle*, was set to require a full load prior to departing for a distribution site and have period failures.
 
-Initially, the "Disaster" is set to begin 6 hours (0.25 days) into the simulation. This gives some time to prime the pump and prestage relief supplies through the warehouse. 
+* The capacity of the *WarehouseVehicle*: *WarehouseVehicleCapacity*
+
+* The frequency of failure: *WarehouseVehicleUptimeBetweenFailures*
+
+Selection Weight on the Paths from the Warehouse to the Distribution Sites was set to dynamically adjust based on the number of Relief Beneficiaries  waiting for Relief Supplies.
+
+### Distribution Sites
+
+Two distribution sites were included in the model. 
+
+The following variables were created to facilitate design of experiments:
+
+* The processing time needed to provide a *ReliefSupply* item to a *ReliefBeneficiary*: DistSiteProcessingTime
+
+### Relief Beneficiaries
+
+The Relief Beneficiaries represent entities who are affected by the disaster and require *ReliefSupplies*. Two separate *Sources* were included in the model to simulate separate origination points beneficiaries for to each distribution site.
+
+* *ReliefBeneficiaryInterarrivalTime*
+
+* *DisasterVictimMaximumArrivals*
+
+### Disaster
+
+The "Disaster" is set to begin at a designated time into the simulation. This gives some time to prime the pump and prestage relief supplies through the warehouse.
+
+The following variables were created to facilitate design of experiments:
+
+* The amount of time between simulation start and onset of the disaster: *DisasterTimeOffset*
+
 
 **TBD** We may need to adjust this... 
 
+## Design of Experiments
+
+
+
 # Results
+
+
 
 # Summary
 
