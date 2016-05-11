@@ -1,6 +1,6 @@
 ---
 title: "Disaster Relief Simulation"
-author: "Daniel Dittenhafer & Jashan Narham"
+author: "Daniel Dittenhafer & Jashan Narhan"
 date: "April 26, 2016"
 documentclass: article 
 geometry: margin=0.75in
@@ -11,6 +11,61 @@ subtitle: "DATA 604: Simulation & Modeling"
 ---
 ```{r rmd-init, echo=FALSE, code=readLines("../RmdInit.R"), results='hide',message=FALSE}
 # Initialize our Rmd environment
+```
+
+```{r, echo=FALSE, message=FALSE}
+library(knitr)
+library(knitcitations)
+library(RefManageR)
+
+cleanbib()
+
+cite_options(style="markdown")
+
+# bibBirthData <- bibentry(bibtype="Misc",
+#                          author=person(family="HHS"),
+#                          publisher="United States Department of Health and Human Services (US DHHS), Centers for Disease Control and Prevention (CDC), National Center for Health Statistics (NCHS), Division of Vital Statistics",
+#                          title="Natality public-use data 2007-2014 on CDC WONDER Online Database",
+#                          year=2016,
+#                          month="February",
+#                          url="http://wonder.cdc.gov/natality-current.html")
+
+
+bibBastianEtAl <- bibentry(bibtype="Article",
+                 title="Multi-criteria logistics modeling for military humanitarian assistance and disaster relief aerial delivery operations",
+                 author=personList(person(family="Bastian", given="Nathaniel"),
+                                   person(family="Griffin", given="Paul"),
+                                   person(family="Spero", given="Eric"),
+                                   person(family="Fulton", given="Lawrence")),
+                 publisher="Springer Berlin Heidelberg",
+                 journal="Optimization Letters",
+                 year=2015,
+                 doi="10.1007/s11590-015-0888-1")
+
+bibOzdamarEtAl <- bibentry(bibtype="Article",
+                 title="Emergency Logistics Planning in Natural Disasters",
+                 author=personList(person(family="Ozdamar", given="Linet"),
+                                   person(family="Ekinci", given="Ediz"),
+                                   person(family="Kucukyazici", given="Beste")),
+                 publisher="Kluwer Academic Publishers",
+                 journal="Annals of Operations Research",
+                 year=2004)
+
+bibHdxWeb <- bibentry(bibtype="Misc",
+                      author=person(family="United Nations Secretariat"),
+                      title="Humanitarian Data Exchange",
+                      publisher="United Nations Office for the Coordination of Humanitarian Affairs",
+                      year=2016,
+                      url="https://data.hdx.rwlabs.org/")
+
+bibCREDWeb <- bibentry(bibtype="Misc",
+                      author=person(family="EM-Dat"),
+                      title="International Disaster Database",
+                      publisher="Centre for Research on the Epidemiology of Disasters",
+                      year=2016,
+                      url="http://www.emdat.be/advanced_search/index.html")
+
+  
 ```
 
 ```{r helper-funcs, echo=FALSE}
@@ -30,13 +85,39 @@ reliefBenAvgForScenarios <- function(scenarios)
 
 # Literature Review
 
+The number of disasters witnessed over time appear to be increasing in terms of 
+frequency and impact. Figure 1 for example, depicts estimates of the average 
+number of people impacted (i.e. made homeless, injured or economically affected)
+or killed from natural disaster from the year 1900 to date, based on disaster 
+data pertaining to notable events in each year `r citep(bibCREDWeb)`.
+
+\begin{center}
+\includegraphics{../images/Report_Fig1.png}
+\end{center}
+\begin{center}
+\text{Fig 1: Averaged number of people killed or affected by disasters by year}
+\end{center}
+
+While there are fluctuations from year to year, there is a clear trend showing a
+growth in the numbers or people who are affected or killed by disasters over 
+time. 
+
+Responding to such disasters is a highly complex process. Often multiple 
+stakeholders will be engaged, working under stressful environments with severe 
+time pressure and significant uncertainty with respect to whether they can work
+to save lives. In this context, we are beginning to see an increase in the 
+amount of research into models and systems that can potentially help aid workers
+in making informed decisions.
+
+... summarize the research briefly TBC.
+
 # Methodology
 
 ## Structure
 
 ### Supplier
 
-A Supplier entity is included in the simulation model. This entity is the source of ReliefSupplies. This entity is used, through design of experiements, to simulate both reliable partner suppliers as well as adhoc suppliers (more variability in their supply). The following variables (Referenced Properties) were created to facilitate the study: 
+A Supplier entity is included in the simulation model. This entity is the source of ReliefSupplies. This entity is used, through design of experiments, to simulate both reliable partner suppliers as well as ad hoc suppliers (more variability in their supply). The following variables (Referenced Properties) were created to facilitate the study: 
 
 * The time to deliver a shipment of supplies:  *SupplierTravelTimeToWarehouse*. 
 
@@ -48,7 +129,7 @@ The delivery vehicle, PartnerVehicle, was set to require a full load prior to de
 
 ### Warehouse
 
-A Warehouse was added to store disaster relief supplies in preparation for a disaster. This entity was modeled as a server which processes incoming ReliefSupplies and stores them in a ready state for movement to a DistributionSite.
+A Warehouse was added to store disaster relief supplies in preparation for a disaster. This entity was modelled as a server which processes incoming ReliefSupplies and stores them in a ready state for movement to a DistributionSite.
 
 The following variables were created to facilitate design of experiments:
 
@@ -64,7 +145,7 @@ The selection weight on the paths from the Warehouse to the Distribution Sites w
 
 ### Distribution Sites
 
-Two distribution sites are included in the simulation and are modeled as combiners which match Relief Supplies to Relief Beneficiaries.
+Two distribution sites are included in the simulation and are modelled as combiners which match Relief Supplies to Relief Beneficiaries.
 
 The following variables were created to facilitate design of experiments:
 
@@ -115,7 +196,7 @@ Measured in hours, this response helped us understand the degree of the worst ca
 
 ### Supplier: Partner vs Ad Hoc
 
-How does a dedicated supplier whose production time is lower (more units of production are committed to our orders), versus an adhoc supplier whose production time is longer, affect the measured outcomes.
+How does a dedicated supplier whose production time is lower (more units of production are committed to our orders), versus an ad hoc supplier whose production time is longer, affect the measured outcomes.
 
 ### Control Variables
 
@@ -198,6 +279,13 @@ g2
 ```
 
 # Summary
+
+# References
+
+```{r, results='asis', echo=FALSE}
+BibOptions(style="html", bib.style="authortitle")
+bibliography()
+```
 
 # Appendix: Raw Code
 
