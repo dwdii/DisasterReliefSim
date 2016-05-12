@@ -49,7 +49,30 @@ bibOzdamarEtAl <- bibentry(bibtype="Article",
                                    person(family="Kucukyazici", given="Beste")),
                  publisher="Kluwer Academic Publishers",
                  journal="Annals of Operations Research",
-                 year=2004)
+                 year=2004,
+                 doi="10.1023/B:ANOR.0000030690.27939.39")
+
+bibKungEtAl <- bibentry(bibtype="Article",
+                 title="Designing intelligent disaster prediction models and systems for debris-flow in Taiwan",
+                 author=personList(person(family="Kung", given="Hsu-Yang"),
+                                   person(family="Chen", given="Chi-Hua"),
+                                   person(family="Ku", given="Hao-Hsiang")),
+                 publisher="Elsevier",
+                 journal="Expert Systems with Applications",
+                 year=2012, 
+                 doi="10.1016/j.eswa.2011.11.083")
+
+
+bibRottEtAl <- bibentry(bibtype="Article",
+                 title="A transshipment model for distribution and inventory relocation under
+                 uncertainty in humanitarian operations",
+                 author=personList(person(family="Rottkemper", given="Beate"),
+                                   person(family="Fisher", given="Kathrin"),
+                                   person(family="Blecken", given="Alexander")),
+                 publisher="Elsevier",
+                 journal="Socio-Economic Planning Sciences",
+                 year=2012,
+                 doi="10.1016/j.seps.2011.09.003")
 
 bibHdxWeb <- bibentry(bibtype="Misc",
                       author=person(family="United Nations Secretariat"),
@@ -86,10 +109,11 @@ reliefBenAvgForScenarios <- function(scenarios)
 # Literature Review
 
 The number of disasters witnessed over time appear to be increasing in terms of 
-frequency and impact. Figure 1 for example, depicts estimates of the average 
-number of people impacted (i.e. made homeless, injured or economically affected)
-or killed from natural disaster from the year 1900 to date, based on disaster 
-data pertaining to notable events in each year `r citep(bibCREDWeb)`.
+frequency and impact. Figure 1 for example, depicts the average number of people
+killed or adversely impacted (i.e. made homeless, injured or economically 
+affected) due to natural disasters from the year 1900 to date. This information 
+is based on disaster data pertaining to *notable* events in each year 
+`r citep(bibCREDWeb)`.
 
 \begin{center}
 \includegraphics{../images/Report_Fig1.png}
@@ -102,18 +126,73 @@ While there are fluctuations from year to year, there is a clear trend showing a
 growth in the numbers or people who are affected or killed by disasters over 
 time. 
 
-Responding to such disasters is a highly complex process. Often multiple 
-stakeholders will be engaged, working under stressful environments with severe 
-time pressure and significant uncertainty with respect to whether they can work
-to save lives. In this context, we are beginning to see an increase in the 
-amount of research into models and systems that can potentially help aid workers
-in making informed decisions.
+Responding to these types of disasters is a highly complex process. Often 
+multiple stakeholders will be engaged, working under stressful environments with
+severe time pressure and significant uncertainty with respect to whether they 
+can work to save lives. In this context, we are beginning to see an increase in 
+the amount of research into models and systems that can potentially help 
+humanitarian workers make informed decisions. For example Kung et al 
+`r citep(bibKungEtAl)` present three prediction models and an inference engine 
+using linear regression, multivariate analysis and back propagation networks to 
+assess potential debris flows resulting from earthquakes. In another example, 
+Rottkemper et al `r citep(bibRottEtAl)` present a mixed-integer programming 
+model for an integrated relocation and distribution planning solution designed 
+to  minimize both operational costs and unmet demand for relief items.
 
-... summarize the research briefly TBC.
+Within the logistics aspects of emergency management, Ozdamar et al 
+`r citep(bibOzdamarEtAl)` present a model to complement decision support systems
+related to logistics planning following a disaster. The study contrasts various 
+algorithmic approaches to solving for multi-period, multi-commodity network flow
+problems coupled with a vehicle routing problem.
+
+Ozdamar et al's study helps to designate routing decisions for vehicles. The 
+authors also note that the resolution to the various optimization choices are 
+NP-hard. They suggest heuristic methodologies be applied to find solutions to 
+large scale problems. Building on this recommendation, the current study, aims 
+to understand the dynamics of in-country humanitarian logistics via simulations.
+In running the simulation, we aim to design a model of a simplified humanitarian 
+logistics chain for the purpose of understnding the behaviour of the system and 
+for evaluation certain strategies.
+
+We aim to model aspects of the humanitarian logistics chain using computer 
+simulation software (Simio). The intent is to understand the realities of moving
+humanitarian aid, particularly to the last mile of distributions (something that
+has not garnered as much research in the literature). 
 
 # Methodology
 
 ## Structure
+
+The basic objective of a logistics system is to deliver the appropriate 
+supplies, in good condition, in the quantities required, and at the places and 
+time they are needed. Some emergencies generate a limited need for very rapid 
+and very specific deliveries of supplies, commodities and resources from outside
+the affected area. This process entails the implementation of the international 
+humanitarian logistics chain (IHLC) as depicted in the following chart.
+
+\begin{center}
+\includegraphics{../images/International Humanitarian Log Chain.jpeg}
+\end{center}
+\begin{center}
+\text{Fig 2: The International Humanitarian Logistics Chain}
+\end{center}
+
+The IHLC is an involved process adding much complexity to the movement of relief 
+resources. It is also important to note that the bulk of relief logistic 
+operations never receive international attention. In an effort to simplify the 
+modelling of the logistic chain, and in keeping with the latter fact, this 
+project will consider the simulation needs of a in-country based logistic chain.
+The simplification of the model is shown in Figure 3.
+
+\begin{center}
+\includegraphics{../images/Simplified_HLC.jpeg}
+\end{center}
+\begin{center}
+\text{Fig 3: The Simplified Humanitarian Logistics Chain}
+\end{center}
+
+Key entities are readily recognized from Figure 3. A short description follows on
+each entity that is modelled.
 
 ### Supplier
 
@@ -277,6 +356,9 @@ g2 <- ggplot(dfExp) +
   myTheme
 g2
 ```
+
+
+Suggestions for future work
 
 # Summary
 
