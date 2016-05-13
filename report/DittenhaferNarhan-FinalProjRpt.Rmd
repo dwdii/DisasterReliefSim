@@ -14,22 +14,6 @@ subtitle: "DATA 604: Simulation & Modeling"
 ```
 
 ```{r, echo=FALSE, message=FALSE}
-library(knitr)
-library(knitcitations)
-library(RefManageR)
-
-cleanbib()
-
-cite_options(style="markdown")
-
-# bibBirthData <- bibentry(bibtype="Misc",
-#                          author=person(family="HHS"),
-#                          publisher="United States Department of Health and Human Services (US DHHS), Centers for Disease Control and Prevention (CDC), National Center for Health Statistics (NCHS), Division of Vital Statistics",
-#                          title="Natality public-use data 2007-2014 on CDC WONDER Online Database",
-#                          year=2016,
-#                          month="February",
-#                          url="http://wonder.cdc.gov/natality-current.html")
-
 
 bibBastianEtAl <- bibentry(bibtype="Article",
                  title="Multi-criteria logistics modeling for military humanitarian assistance and disaster relief aerial delivery operations",
@@ -92,13 +76,30 @@ bibCREDWeb <- bibentry(bibtype="Misc",
 ```
 
 ```{r helper-funcs, echo=FALSE}
-reliefBenAvgForScenarios <- function(scenarios)
+reliefBenAvgForScenarios <- function(scenarios, data)
 {
-  dfExp <- subset(dfResults, Object.Name == "ReliefBeneficiary" & 
+  dfExp <- subset(data, Object.Name == "ReliefBeneficiary" & 
                             Scenario %in% scenarios &
                             Data.Item == "TimeInSystem" &
                             Statistic.Type == "Average (Hours)")  
   return(dfExp)
+}
+
+dataForScenarios <- function(scenarios, data)
+{
+  dfData <- subset(data,  Scenario %in% scenarios )
+  dfData <- dfData[,c("Scenario", 
+                      "Response", 
+                      "Mean", 
+                      "Mean.Confidence.Interval.Start",
+                      "Mean.Confidence.Interval.End")]
+  colnames(dfData) <- c("Scenario", 
+                      "Response", 
+                      "Mean", 
+                      "95% CI Lwr",
+                      "95% CI Upr")
+  rownames(dfData) <- NULL
+  return(dfData)
 }
 ```
 
@@ -202,9 +203,11 @@ A Supplier entity is included in the simulation model. This entity is the source
 
 * The maximum number of relief supplies which the supplier will provide: *SupplierMaximumArrivals* 
 
-The delivery vehicle, PartnerVehicle, was set to require a full load prior to departing for the Warehouse.
+* The time between produced relief supply available for movement to the warehouse: *SupplierReliefSuppliesInterarrivalTime*
 
-* The capacity of the PartnerVehicle: *SupplierVehicleCapacity*
+The delivery vehicle, SupplierVehicle, was set to require a full load prior to departing for the Warehouse.
+
+* The capacity of the SupplierVehicle: *SupplierVehicleCapacity*
 
 ### Warehouse
 
@@ -273,30 +276,123 @@ Measured in hours, this response helped us understand the degree of the worst ca
 
 ## Design of Experiments
 
+A variety of experiments were performed in the context of the simulation. The following table lists the baseline values for the control variables. Each of the experiments modifies a single variable and recorded a outcome of interests, as described in the following subsections.
+
+```{r, echo=FALSE, tab.cap="Simulation Control Variables"}
+dfDefaults <- data.frame(Name=c(
+                                "DisasterVictimMaximumArrivals (per Dist Site)",
+                                "WarehouseTravelTimeToDistributionSite1",
+                                "SupplierMaximumArrivals",
+                                "SupplierReliefSuppliesInterarrivalTime",
+                                "WarehouseTravelTimeToDistributionSite2",
+                                "DisasterTimeOffset",
+                                "WarehouseVehicleCapacity",
+                                "SupplierVehicleCapacity",
+                                "ReliefBeneficiaryInterarrivalTime",
+                                "WarehouseVehicleUptimeBetweenFailures",
+                                "DistSiteProcessingTime",
+                                "WarehouseStorageCapacity",
+                                "SupplierTravelTimeToWarehouse",
+                                "Entry2DistSitePath"
+                                ), 
+                         Value=c(
+                           10000,
+                           "Random.Normal(6,0.5)",
+                           "Infinity",
+                           "Random.Normal(1, 0.1)",
+                           "Random.Normal(6,0.5)",
+                           3,
+                           1000,
+                           5000,
+                           "Random.Exponential(2.5)",
+                           "Random.Exponential(100)",
+                           "Random.Exponential(1)",
+                           "Infinity",
+                           "Random.Normal(6,0.5)",
+                           "TimePathToDistSite2"),
+                         Units=c(
+                           "Beneficiaries",
+                           "Hours",
+                           "Relief Supply Items",
+                           "Minutes",
+                           "Hours",
+                           "Days",
+                           "Relief Supply Items",
+                           "Relief Supply Items",
+                           "Minutes",
+                           "Hours",
+                           "Minutes",
+                           "Relief Supply Items",
+                           "Hours",
+                           "Path Name"
+                         ))
+rownames(dfDefaults) <- NULL
+
+kable(dfDefaults[order(dfDefaults$Name), ], row.names=FALSE)
+```
+
+
 ### Supplier: Partner vs Ad Hoc
 
-How does a dedicated supplier whose production time is lower (more units of production are committed to our orders), versus an ad hoc supplier whose production time is longer, affect the measured outcomes.
+How does a dedicated supplier whose production time is lower (more units of production are committed to our orders), versus an ad hoc supplier whose production time is longer, affect the measured outcomes?
 
-### Control Variables
-
-The following table shows key parameters (control variables) for each scenario:
+The following table shows key parameters (control variables) for this scenario:
 
 ```{r, echo=FALSE}
 dfControls <- data.frame(
-  Name=c("Partner Supplier", 
-         "Adhoc Supplier", 
-         "Midlevel Supplier", 
+  Name=c("Adhoc Supplier", 
+         "Midlevel Supplier",
+         "Partner Supplier (Baseline)"),
+  ReliefSuppliesInterarrivalTime=c("Random.Normal(4, 0.1)",
+                                   "Random.Normal(2.5, 0.1)",
+                                   "Random.Normal(1, 0.1)"))
+kable(dfControls)
+```
+
+### Distribution Site: Level of Access
+
+How does the level of access, modeled as travel time between the warehouse and distribution site 1, affect outcomes?
+
+```{r, echo=FALSE}
+dfControls <- data.frame(
+  Name=c("Partner Supplier (Baseline)", 
          "Midlevel Access to Dist Site 1", 
          "Quick Access to Dist Site 1"),
-  ReliefSuppliesInterarrivalTime=c("Random.Normal(1, 0.1)",
-                                   "Random.Normal(4, 0.1)",
-                                   "Random.Normal(2.5, 0.1)",
-                                   "Random.Normal(1, 0.1)",
-                                   "Random.Normal(1, 0.1)"),  WarehouseTravelTimeToDistSite1=c("Random.Normal(6,0.5)",
-                                   "Random.Normal(6,0.5)",
-                                   "Random.Normal(6,0.5)",
+ WarehouseTravelTimeToDistSite1=c("Random.Normal(6,0.5)",
                                    "Random.Normal(4,0.5)",
                                    "Random.Normal(2,0.5)")
+
+)
+kable(dfControls)
+```
+
+### Warehouse Vehicle: Propensity for Failure
+
+How does the likelihood of the warehouse delivery vehicle for failure affect outcomes?
+
+```{r, echo=FALSE}
+dfControls <- data.frame(
+  Name=c("Partner Supplier (Baseline)", 
+         "Warehouse Vehicle Midlevel Failures", 
+         "Warehouse Vehicle No Failures"),
+  WarehouseVehicleUptimeBetweenFailures=c("Random.Exponential(100)",
+                                   "Random.Exponential(50)",
+                                   "Infinity")
+
+)
+kable(dfControls)
+```
+
+### Distribution Site Closure
+
+How does a distribution site closure affect outcomes?
+
+```{r, echo=FALSE}
+dfControls <- data.frame(
+  Name=c("Partner Supplier (Baseline)", 
+         "Distribution Site 2 Closed"),
+  Entry2DistSitePath=c("TimePathToDistSite2",
+                                          "TimePathToDistSite1")
 
 )
 kable(dfControls)
@@ -307,6 +403,9 @@ kable(dfControls)
 ```{r, echo=FALSE}
 # Load the results from the Simio CSV
 dfResults <- read.table("../project/DisasterReliefSim-Simio_DisasterReliefModel_SupplierExperiment_ResultsSummary.csv",
+                        sep=",", header=TRUE, stringsAsFactors=FALSE)
+
+dfResponseData <- read.table("../project/DisasterReliefSim-Simio_DisasterReliefModel_Experiment_ResponseSummary.csv",
                         sep=",", header=TRUE, stringsAsFactors=FALSE)
 
 #summary(dfResults)
@@ -321,14 +420,26 @@ dfResults$WarehouseTravelTimeToDistributionSite1 <- NA
 dfResults[dfResults$Scenario == "Partner Supplier", ]$WarehouseTravelTimeToDistributionSite1 <- 6
 dfResults[dfResults$Scenario == "Midlevel Access to Dist Site 1", ]$WarehouseTravelTimeToDistributionSite1 <- 4
 dfResults[dfResults$Scenario == "Quick Access to Dist Site 1", ]$WarehouseTravelTimeToDistributionSite1 <- 2
+
+dfResults$WarehouseVehicleUptimeBetweenFailures <- NA
+dfResults[dfResults$Scenario == "Partner Supplier", ]$WarehouseVehicleUptimeBetweenFailures <- 100
+dfResults[dfResults$Scenario == "Warehouse Vehicle Midlevel Failures", ]$WarehouseVehicleUptimeBetweenFailures <- 50
+dfResults[dfResults$Scenario == "Warehouse Vehicle No Failures", ]$WarehouseVehicleUptimeBetweenFailures <- 1000
+
+
+dfResults$DistributionSite2Closed <- NA
+dfResults[dfResults$Scenario == "Partner Supplier", ]$DistributionSite2Closed <- 0
+dfResults[dfResults$Scenario == "Distribution Site 2 Closed", ]$DistributionSite2Closed <- 1
+#dfResults$DistributionSite2Closed <- as.factor(dfResults$DistributionSite2Closed )
+
 ```
 
-## Supplier Production Committment
+## Supplier: Partner vs Ad Hoc
 
 ```{r, echo=FALSE, fig.height=3}
 # Select only the scenarios that are related to this experiment
 vSupplierScenarios <- c("Partner Supplier", "Adhoc Supplier", "Midlevel Supplier")
-dfExp <- reliefBenAvgForScenarios(vSupplierScenarios)
+dfExp <- reliefBenAvgForScenarios(vSupplierScenarios, dfResults)
 
 g1 <- ggplot(dfExp) + 
   geom_line(aes(x=SupplierReliefSuppliesInterarrivalTimeMean, y=Average)) +
@@ -341,26 +452,74 @@ g1
 ## Warehouse Access to Distribution Site
 
 ```{r, echo=FALSE, fig.height=3}
-vScenarios <- c("Partner Supplier", 
+vWarehouseScenarios <- c("Partner Supplier", 
                 "Midlevel Access to Dist Site 1", 
                 "Quick Access to Dist Site 1")
 
 # Select only the scenarios that are related to this experiment
-dfExp <- reliefBenAvgForScenarios(vScenarios)
+dfExp <- reliefBenAvgForScenarios(vWarehouseScenarios, dfResults)
 
 #dfExp
 g2 <- ggplot(dfExp) + 
   geom_line(aes(x=WarehouseTravelTimeToDistributionSite1, y=Average)) +
-  labs(x="Supplier Relief Supplies Interarrival Time Mean (minutes)",
+  labs(x="Warehouse Travel Time To Distribution Site 1 (hours)",
        y="Avg Beneficiary Time In System (hours)") +
+  ylim(0, 10) +
   myTheme
 g2
 ```
 
 
+## Warehouse Vehicle Failures
+
+The warehouse vehicle failures yielded interesting results. It appears the difference between a 100 hour exponential mean and no failures is negligible. Strangely, the outcome of average beneficiaries time in system reduces for the mean failure rate of 50 uptime hours between failures. The confidence interval for these values reveals that an overlap suggesting an insignificant difference.
+
+```{r, echo=FALSE, fig.height=3}
+vWarehouseVehicleScenarios <- c("Partner Supplier", 
+                "Warehouse Vehicle Midlevel Failures", 
+                "Warehouse Vehicle No Failures")
+
+# Select only the scenarios that are related to this experiment
+dfExp <- reliefBenAvgForScenarios(vWarehouseVehicleScenarios, dfResults)
+
+#dfExp
+g2 <- ggplot(dfExp) + 
+  geom_line(aes(x=WarehouseVehicleUptimeBetweenFailures, y=Average)) +
+  labs(x="Warehouse Vehicle Update Between Failures (hours)",
+       y="Avg Beneficiary Time In System (hours)") +
+    ylim(0, 10) +
+  myTheme
+g2
+```
+
+## Distribution Site Closure
+
+The distribution site closure did not have much of an effect on the primary outcome, average beneficiaries time in system. This requires further investigation but could indicate the travel time for the extra beneficiaries was too low. Additionally, it seems the capacity of the relief distribution system (as modeled) has sufficient head room to take on the additional demand at a single distribution site.
+
+```{r, echo=FALSE, fig.height=3}
+vDistSiteScenarios <- c("Partner Supplier", 
+                "Distribution Site 2 Closed")
+
+# Select only the scenarios that are related to this experiment
+dfExp <- reliefBenAvgForScenarios(vDistSiteScenarios, dfResults)
+
+#dfExp
+g2 <- ggplot(dfExp) + 
+  geom_line(aes(x=DistributionSite2Closed, y=Average)) +
+  labs(x="Distribution Site 2 Closed (boolean)",
+       y="Avg Beneficiary Time In System (hours)") +
+  ylim(0, 10) +
+  myTheme
+g2
+```
+
+
+
 Suggestions for future work
 
 # Summary
+
+
 
 # References
 
@@ -369,5 +528,33 @@ BibOptions(style="html", bib.style="authortitle")
 bibliography()
 ```
 
-# Appendix: Raw Code
+# Appendix: Response Data
 
+```{r, echo=FALSE, tab.cap="Supplier: Partner vs Ad Hoc Responses"}
+df <- dataForScenarios(vSupplierScenarios, dfResponseData)
+kable(df)
+```
+
+```{r, echo=FALSE, tab.cap="Warehouse Access to Distribution Site Responses"}
+df <- dataForScenarios(vWarehouseScenarios, dfResponseData)
+kable(df)
+```
+
+```{r, echo=FALSE, tab.cap="Warehouse Access to Distribution Site Responses"}
+df <- dataForScenarios(vWarehouseScenarios, dfResponseData)
+kable(df)
+```
+
+\begin{center}
+\includegraphics{../images/SimioAvgBenTimeInSys.png}
+\end{center}
+\begin{center}
+\text{Fig N: All Scenarios - Average Beneficiaries Time In System}
+\end{center}
+
+\begin{center}
+\includegraphics{../images/SimioScreenshot3d.png}
+\end{center}
+\begin{center}
+\text{Fig N: Simio Simulation Model - 3D}
+\end{center}
