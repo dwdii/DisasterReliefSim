@@ -1,5 +1,5 @@
 ---
-title: "Disaster Relief Simulation"
+title: "Intracountry Disaster Relief Simulation"
 author: "Daniel Dittenhafer & Jashan Narhan"
 date: "April 26, 2016"
 documentclass: article 
@@ -235,7 +235,7 @@ emergencies.
 
 It should also be noted that the entity was also modelled on an assumption of
 infinite demand rather than on 'consumer' driven demand for supplies. (The 
-simulation capped supplies in the system at 50,000 units). This assumption was
+simulation warned when supplies in the system exceeded 20,000 units). This assumption was
 felt to be appropriate given the fact that the simulation is modelling the rapid 
 onset and response to a disaster wherein estimating affected beneficiary numbers 
 is very hard to achieve up front. Consequently modelling a continuous supply of
