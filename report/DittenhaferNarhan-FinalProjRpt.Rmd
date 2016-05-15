@@ -85,6 +85,15 @@ reliefBenAvgForScenarios <- function(scenarios, data)
   return(dfExp)
 }
 
+supplyAvgForScenarios <- function(scenarios, data)
+{
+  dfExp <- subset(data, Object.Name == "ReliefSupplyItem" & 
+                            Scenario %in% scenarios &
+                            Data.Item == "TimeInSystem" &
+                            Statistic.Type == "Average (Hours)")  
+  return(dfExp)
+}
+
 dataForScenarios <- function(scenarios, data)
 {
   dfData <- subset(data,  Scenario %in% scenarios )
@@ -572,6 +581,26 @@ operating hours, and as such waiting time accumulated on a 24 hour basis.
 Perhaps this is slightly artificial, however it does indicate the impact of 
 unreliable partners further up the supply chain.
 
+```{r, echo=FALSE, fig.height=3}
+# Time in system for supply items
+dfExp1.2 <- supplyAvgForScenarios(vSupplierScenarios, dfResults)
+
+g1.2 <- ggplot(dfExp1.2) + 
+  geom_point(aes(x=Scenario, y=Average)) +
+  labs(x="Supplier Type",
+       y="Avg Time In System For Supplies (hrs)") +
+  myTheme
+g1.2
+```
+
+The importance of pre-establishing strategic supplier relationships is further 
+corroborated in the simulation by looking at the length of time supplies remain
+within the system. The ideal scenario would be to have a 'just-in’ time supply
+chain thereby minimizing warehouse costs while fully meeting beneficiary needs.
+This is especially true for perishable relief items such as food or medicines.
+As can be seen in the figure above, the established a relationship with the 
+supplier, the less time it took for supplies to remain within the system.
+
 ## Restricted Access to Distribution Site from Warehouse
 
 ```{r, echo=FALSE, fig.height=3}
@@ -595,20 +624,21 @@ g2
 An average wait time by beneficiaries of 5 hours is noted when access to a 
 distribution site is easier (modelled as quicker time to gain access the 
 distribution site). Interestingly we see that the model suggests that an 
-optimal time to reach/gain access to the distribution site is approximately 4 
+optimal time (in terms of reduced beneficiary wait time at the distribution 
+points) to reach/gain access to the distribution site is approximately 4 
 hours, after which the average wait time for beneficiaries begins to increase 
 again.
 
 It is suggested that the simulation is identifying a phenomenon associated with 
-the arrival and queuing times of beneficiaries at a distribution site and the 
-capacity to serve the queue based on incoming supplies. One hypothesis is that at 
-4 hours time to access the distribution site, sufficient numbers of beneficiaries 
-have accumulated to effectively service more people more quickly with all 
-available supplies on the truck. Quicker arrival times of trucks to the sites may
-imply that few people are waiting in queues at the distribution site. Moreover 
-longer access times may mean that the buffer queue of beneficiaries is not being 
-cleared in the most optimal manner (recall the capacity of the trucks are 
-limited to 1000 units).
+the arrival and queuing times of beneficiaries at a distribution site in 
+conjunction with the capacity to serve the queue based on incoming supplies. One
+hypothesis is that at  the 4 hours mark to access the distribution site, 
+sufficient numbers of beneficiaries have accumulated to effectively service
+people more quickly with all available supplies on the truck. Quicker arrival 
+times of trucks to the sites may imply that few people have accumulated in the 
+queues. Moreover longer access times of the vehicles may mean that the buffer 
+queue of beneficiaries is not being cleared in the most optimal manner (recall 
+the capacity of the trucks are limited to 1000 units).
 
 ## Warehouse Vehicle Failures
 
