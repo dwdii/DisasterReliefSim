@@ -587,7 +587,7 @@ dfExp1.2 <- supplyAvgForScenarios(vSupplierScenarios, dfResults)
 
 g1.2 <- ggplot(dfExp1.2) + 
   geom_point(aes(x=Scenario, y=Average)) +
-  labs(x="Supplier Type",
+  labs(x="",
        y="Avg Time In System For Supplies (hrs)") +
   myTheme
 g1.2
@@ -687,7 +687,26 @@ g2 <- ggplot(dfExp) +
 g2
 ```
 
+While the average beneficiary time in the system when distribution site 2 was 
+closed, did not substantially differ from other experimental scenarios (with the 
+exception of the noted differences when supplier was not equal to a Partner 
+supplier), it was noted that the length of time for supplies to move through the
+system was slightly quicker when site 2 was closed. The range is seen to be lower 
+under this scenario:
 
+<< Daniel - do you think that the image for "Relief Supplies Time in System" in the PPT (slide 14) should be included here? >>
+
+Note that the average travel time between warehouses and distribution sites was 
+the same (6 hours, with standard deviation of 30 minutes). Further, there is 
+only truck servicing both sites. It is unclear as to why supplies appeared to 
+move more quickly through the system in this scenario. One hypothesis is that 
+when site 2 was closed, the queue of beneficiaries at site 1 filled up quicker 
+and the numbers where therefore greater for distributing supplies to when the 
+truck arrived (in essence the simulation may indicate that closing site 2, 
+presented an opportunity to serving more people in a single truck-load of relief 
+items thereby reducing the time for supplies to be in the system). The average 
+wait time of beneficiaries would not have differed as the number of people 
+entering the simulation did not change.
 
 # Suggestions for future work 
 
