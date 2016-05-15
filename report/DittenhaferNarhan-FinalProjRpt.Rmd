@@ -691,18 +691,36 @@ g2
 
 # Suggestions for future work 
 
-Adding a financial analysis component to the the models to assess the cost of 
-supplies provided by the different modes of reliable suppliers. Also the 
-opportunity of wait times for beneficiaries.
+The current study provides a good indication of in-country supply chain dynamics 
+down to the last mile of distributions to beneficiaries. The underlying 
+assumptions associated with production frequencies based on supplier type, the 
+expected inter-delivery times of supplies, and the arrival behaviour of 
+beneficiaries were estimated using domain knowledge experience and some 
+limited field data. However much of this needs to be supplemented with  
+experiments and production time observations at a broader scale. It is also 
+acknowledged that the context of the disaster will impact results. For example 
+disasters significantly affecting transportation infrastructure, would necessitate 
+modelling different modes of delivery (such as aerial) instead of land-based 
+vehicles. Future work may also look to adding an aspect of disaster intensity 
+and frequency as additions to the simulation.
 
-Finding optimal solutions in terms of amount of stock to preposition, versus 
-time to relieved (efficiency) and also wastage (spoiled supplies)
+Further, adding a financial analysis component to the the models to provide a 
+cost quantification ti metrics would be a natural extension. For example to 
+generate cost-benefit analysis of the different modes of reliable suppliers. 
+This could be extended to include the opportunity costs of wait times for 
+beneficiaries.
 
-Growing the entities to encompass more complexity of local supply chain systems,
-such as greater number of warehouse centres (possible modelling the movement from 
-an in country central warehouse to district level warehouses that hold supplies
-prior to pre-planned distributions in the foreseeable future). The notion of 
-security and risk may be better encompassed in such models, as the security risks 
+Quantifying supplies would help in finding optimal solutions in terms of amount
+t of stock to preposition, versus time to deliver relief (efficiency) and also 
+to compare against wastage (spoiled supplies).
+
+Finally, future work may wish to consider growing the entities to encompass more
+complexity of local supply chain systems. For example, modelling a greater 
+number of warehouse centres (possible modelling the movement from an in-country
+central warehouse to district level warehouses that hold supplies prior to 
+pre-planned distributions). The notion of security and risk may be consequently 
+be built into such extended models, as the security risks at district level 
+warehouses are typically higher than those at central warehouses.
 
 # Summary
 
