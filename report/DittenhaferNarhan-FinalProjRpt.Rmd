@@ -114,7 +114,11 @@ dataForScenarios <- function(scenarios, data)
 
 # Abstract
 
+
+
 # Keywords
+
+humanitarian aid, logistics, disaster relief, simulation
 
 # Literature Review
 
@@ -165,7 +169,7 @@ to understand the dynamics of in-country humanitarian logistics via simulations.
 
 In running the simulation, we present a model of a simplified humanitarian 
 logistics chain for the purpose of understanding the behaviour of the system and 
-for evaluation certain strategies. We aim to model key aspects of the 
+for evaluating certain strategies. We aim to model key aspects of the 
 humanitarian logistics chain using computer simulation software (Simio). The 
 intent is to understand the realities of moving humanitarian aid, particularly 
 to the last mile of distributions (something that has not garnered as much 
@@ -184,7 +188,7 @@ implementation of the international humanitarian logistics chain (IHLC) as
 depicted in the following chart.
 
 \begin{center}
-\includegraphics{../images/International Humanitarian Log Chain.jpeg}
+\includegraphics{../images/International_Humanitarian_Log_Chain.jpeg}
 \end{center}
 \begin{center}
 \text{Fig 2: The International Humanitarian Logistics Chain}
@@ -213,7 +217,7 @@ on each entity that is modelled.
 
 A Supplier entity is included in the simulation model. This entity is the source
 of ReliefSupplies. The Supplier entity is used, through design of experiments, 
-to simulate the reliability of suppliers. It does this by modelling three 
+to simulate the reliability of suppliers. We do this by modelling three 
 categories of supplier: Partner (Preferential Supplier, representing the 
 creation of Strategic Supply Chain Partner Agreement with a given supplier such 
 as agreements on frequency of supplies by a given time, agreement on price 
@@ -234,12 +238,13 @@ the simulation results to real-world supplier data under the context of
 emergencies.
 
 It should also be noted that the entity was also modelled on an assumption of
-infinite demand rather than on 'consumer' driven demand for supplies. (The 
-simulation warned when supplies in the system exceeded 20,000 units). This assumption was
+infinite supply under the contraint of the inter-arrival time capability of the 
+supplier, and continuous demand driven by the anticipation of a disaster and then the disaster itself.
+This assumption was
 felt to be appropriate given the fact that the simulation is modelling the rapid 
 onset and response to a disaster wherein estimating affected beneficiary numbers 
 is very hard to achieve up front. Consequently modelling a continuous supply of
-relief items to the capped level, is considered a fair reflection of the 
+relief items, is considered a fair reflection of the 
 real-world reality of an aid agency establishing a supply chain for relief items.
 
 The following variables (Referenced Properties) were created to facilitate the 
@@ -249,10 +254,10 @@ study:
 
 * The maximum number of relief supplies which the supplier will provide: *SupplierMaximumArrivals* 
 
-* The time between produced relief supply available for movement to the warehouse: *SupplierReliefSuppliesInterarrivalTime*
+* The time between produced relief supplies available for movement to the warehouse: *SupplierReliefSuppliesInterarrivalTime*
 
 The delivery vehicle, SupplierVehicle, was set to require a full load prior to 
-departing for the Warehouse (5000 units).
+departing for the Warehouse.
 
 * The capacity of the SupplierVehicle: *SupplierVehicleCapacity*
 
@@ -292,10 +297,11 @@ combiners which match Relief Supplies to Beneficiaries.
 
 The following variable was created to facilitate design of experiments:
 
-* The processing time needed to provide a ReliefSupply item to a ReliefBeneficiary: DistSiteProcessingTime
+* The processing time needed to provide a ReliefSupply item to a ReliefBeneficiary: *DistSiteProcessingTime*
 
 Typically this is a fast process, especially with pre-packed relief supplies as
-would be expected in the scenario being simulated. An average of 30 seconds was
+would be expected in the scenario being simulated. A Random Exponential 
+with a mean of 1 minute was
 used to process individuals through the handover of supplies from aid worker to
 beneficiary.
 
@@ -385,7 +391,7 @@ case scenario for distribution site 2 beneficiaries in need of relief supplies.
 
 A variety of experiments were performed in the context of the simulation. The 
 following table lists the baseline values for the control variables. Each of the
-experiments modifies a single variable and recorded a outcome of interests, as 
+experiments modifies a single variable and recorded an outcome of interest, as 
 described in the following subsections.
 
 ```{r, echo=FALSE, tab.cap="Simulation Control Variables"}
@@ -464,7 +470,7 @@ kable(dfControls)
 
 ### Distribution Site: Level of Access
 
-How does the level of access to distribution sits, modelled as travel time 
+How does the level of access to distribution sites, modelled as travel time 
 between the warehouse and distribution site 1, affect outcomes?
 
 ```{r, echo=FALSE}
@@ -598,7 +604,7 @@ corroborated in the simulation by looking at the length of time supplies remain
 within the system. The ideal scenario would be to have a 'just-in’ time supply
 chain thereby minimizing warehouse costs while fully meeting beneficiary needs.
 This is especially true for perishable relief items such as food or medicines.
-As can be seen in the figure above, the established a relationship with the 
+As can be seen in the figure above, the more established a relationship with the 
 supplier, the less time it took for supplies to remain within the system.
 
 ## Restricted Access to Distribution Site from Warehouse
@@ -694,11 +700,16 @@ supplier), it was noted that the length of time for supplies to move through the
 system was slightly quicker when site 2 was closed. The range is seen to be lower 
 under this scenario:
 
-<< Daniel - do you think that the image for "Relief Supplies Time in System" in the PPT (slide 14) should be included here? >>
+\begin{center}
+\includegraphics{../images/SimioReliefSuppliesTimeInSystem.png}
+\end{center}
+\begin{center}
+\text{All Scenarios - Relief Supplies Time In System}
+\end{center}
 
 Note that the average travel time between warehouses and distribution sites was 
 the same (6 hours, with standard deviation of 30 minutes). Further, there is 
-only truck servicing both sites. It is unclear as to why supplies appeared to 
+only one truck servicing both distribution sites. It is unclear as to why supplies appeared to 
 move more quickly through the system in this scenario. One hypothesis is that 
 when site 2 was closed, the queue of beneficiaries at site 1 filled up quicker 
 and the numbers where therefore greater for distributing supplies to when the 
@@ -724,20 +735,20 @@ vehicles. Future work may also look to adding an aspect of disaster intensity
 and frequency as additions to the simulation.
 
 Further, adding a financial analysis component to the the models to provide a 
-cost quantification ti metrics would be a natural extension. For example to 
+cost quantification metrics would be a natural extension. For example to 
 generate cost-benefit analysis of the different modes of reliable suppliers. 
 This could be extended to include the opportunity costs of wait times for 
 beneficiaries.
 
 Quantifying supplies would help in finding optimal solutions in terms of amount
-t of stock to preposition, versus time to deliver relief (efficiency) and also 
+of stock to preposition, versus time to deliver relief (efficiency) and also 
 to compare against wastage (spoiled supplies).
 
 Finally, future work may wish to consider growing the entities to encompass more
 complexity of local supply chain systems. For example, modelling a greater 
-number of warehouse centres (possible modelling the movement from an in-country
+number of warehouse centres (possibly modelling the movement from an in-country
 central warehouse to district level warehouses that hold supplies prior to 
-pre-planned distributions). The notion of security and risk may be consequently 
+pre-planned distributions). The notion of security and risk may consequently 
 be built into such extended models, as the security risks at district level 
 warehouses are typically higher than those at central warehouses.
 
@@ -773,12 +784,12 @@ kable(df)
 \includegraphics{../images/SimioAvgBenTimeInSys.png}
 \end{center}
 \begin{center}
-\text{Fig N: All Scenarios - Average Beneficiaries Time In System}
+\text{All Scenarios - Average Beneficiaries Time In System}
 \end{center}
 
 \begin{center}
 \includegraphics{../images/SimioScreenshot3d.png}
 \end{center}
 \begin{center}
-\text{Fig N: Simio Simulation Model - 3D}
+\text{Simio Simulation Model - 3D}
 \end{center}
