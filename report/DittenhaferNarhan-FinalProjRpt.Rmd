@@ -814,8 +814,8 @@ df <- dataForScenarios(vWarehouseScenarios, dfResponseData)
 kable(df)
 ```
 
-```{r, echo=FALSE, tab.cap="Warehouse Access to Distribution Site Responses"}
-df <- dataForScenarios(vWarehouseScenarios, dfResponseData)
+```{r, echo=FALSE, tab.cap="Distribution Site Closure Responses"}
+df <- dataForScenarios(vDistSiteScenarios, dfResponseData)
 kable(df)
 ```
 
