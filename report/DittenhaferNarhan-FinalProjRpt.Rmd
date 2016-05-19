@@ -73,6 +73,12 @@ bibCREDWeb <- bibentry(bibtype="Misc",
                       year=2016,
                       url="http://www.emdat.be/advanced_search/index.html")
 
+bibGitHub <- bibentry(bibtype="Misc",
+                      title="DisasterReliefSim",
+                      author=personList(person(family="Dittenhafer", given="Daniel W"), 
+                                   person(family="Narhan", given="Jashan")),
+                      year=2016,
+                      url="https://github.com/dwdii/DisasterReliefSim")
   
 ```
 
@@ -115,7 +121,7 @@ dataForScenarios <- function(scenarios, data)
 
 # Abstract
 
-
+As disasters have affected more people, research into various aspects of relief planning and delivery appear to be increasing. This study focuses on in-country supply chain logistics extending from the originating supplier to last mile distribution to beneficiaries. A simulation model is developed using Simio and experiments are performed to gauge sensitivity to various parameters and decision variables. Supplier relationship factors are found to be key drivers of beneficiary outcomes. To facilitate reproducible research, the research materials are shared on GitHub.
 
 # Keywords
 
@@ -777,14 +783,17 @@ district level warehouses are typically higher than those at central warehouses.
 
 # Summary
 
-The simulation model developed in this study is focused on an in-country disaster relief scenario. The model
-is capable of more experiments than were executed given the variables and capabilities of Simio, but those experiments 
-which were performed show that supplier capability and commitment can have a significant impact on beneficiary
-outcomes. Additionally, depending on supply chain capability and other factors, more distribution sites may actually 
-degrade overall beneficiairy outcomes. Opening an additionaly distribution site should be considered carefully against 
-the impact to existing sites.
+The simulation model developed in this study is focused on an in-country
+disaster relief scenario. The model is capable of more experiments than 
+were executed given the variables and capabilities of Simio, but those 
+experiments which were performed show that supplier capability and commitment
+can have a significant impact on beneficiary outcomes. Additionally, depending
+on supply chain capability and other factors, more distribution sites may actually 
+degrade overall beneficiairy outcomes. Opening an additionaly distribution site 
+should be considered carefully against the impact to existing sites.
 
-
+All materials related to this study including the actual Simio simulation model 
+are shared on GitHub under our DisasterReliefSim repository `r citep(bibGitHub)`.
 
 # References
 
