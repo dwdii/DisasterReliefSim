@@ -9,8 +9,9 @@ output:
     number_sections: yes
 subtitle: "DATA 604: Simulation & Modeling"
 ---
-```{r rmd-init, echo=FALSE, code=readLines("../RmdInit.R"), results='hide',message=FALSE}
+```{r rmd-init, echo=FALSE, code=readLines("../RmdInit.R"), results='hide',message=FALSE, warning=FALSE}
 # Initialize our Rmd environment
+
 ```
 
 ```{r, echo=FALSE, message=FALSE}
@@ -129,12 +130,27 @@ affected) due to natural disasters from the year 1900 to date. This information
 is based on disaster data pertaining to *notable* events in each year 
 `r citep(bibCREDWeb)`.
 
-\begin{center}
-\includegraphics{../images/Report_Fig1.png}
-\end{center}
-\begin{center}
-\text{Fig 1: Averaged number of people killed or affected by disasters by year}
-\end{center}
+```{r, echo=FALSE, fig.height=3}
+dat <- read.csv('../data/DataByYear.csv')
+dat <- dat[, -c(2,9)]
+
+dat[is.na(dat)] <- 0  ## NAs are being replaced as zeros for the purpose of 
+                      ## figure generation
+dat$Total <- rowSums(dat[,3:6])  ## Aggegating killed and affected (made 
+                                 ## homeless, affected, injured)
+dat <- dat[, c(1, 8)]
+
+df <- dat %>% group_by(year) %>% summarise(count = n(), KillAffect = sum(Total))
+df$Avg.KillAffected <- (df$KillAffect/df$count)/1e+6
+
+# generate the plot
+g0 <- ggplot(df, aes(x = year, y = Avg.KillAffected)) + geom_line() + 
+        ylab("People (Millions)") + xlab("") +
+        ggtitle("Figure 1: Average Numbers Killed or Affected By Major Disasters 
+                in Given Year") +
+        myTheme
+g0
+```
 
 While there are fluctuations from year to year, there is a clear trend showing a
 growth in the numbers or people who are affected or killed by disasters over 
@@ -165,7 +181,8 @@ Ozdamar et al's study helps to designate routing decisions for vehicles. The
 authors also note that the resolution to the various optimization choices are 
 NP-hard. They suggest heuristic methodologies be applied to find solutions to 
 large scale problems. Building on this recommendation, the current study, aims 
-to understand the dynamics of in-country humanitarian logistics via simulations.
+to understand the dynamics of in-country humanitarian logistics problems via 
+simulations.
 
 In running the simulation, we present a model of a simplified humanitarian 
 logistics chain for the purpose of understanding the behaviour of the system and 
@@ -184,7 +201,7 @@ supplies, in good condition, in the quantities required, and at the places and
 time they are needed. Some emergencies generate a limited need for very rapid 
 and very specific deliveries of supplies, commodities and resources from outside
 the affected area (i.e. outside the affected country). This process entails the 
-implementation of the international humanitarian logistics chain (IHLC) as 
+implementation of an international humanitarian logistics chain (IHLC) as 
 depicted in the following chart.
 
 \begin{center}
@@ -195,13 +212,15 @@ depicted in the following chart.
 \end{center}
 
 The IHLC is an involved process adding significant complexity to the movement of
-relief resources - see ``r citep(bibBastianEtAl)` for an example of IHLC systems.
+relief resources - see ``r citep(bibBastianEtAl)` for an example of modelling 
+an international logistics chain.
 
-It is also important to note that the majority of relief logistic operations 
-never receive international attention. With this reality in mind, and in an 
-effort to simplify the modelling of the logistic chain, this project will 
-consider the simulation needs of a in-country based logistic chain.
-The simplification of the model is shown in Figure 3.
+While international humanitarian logistics is a complex process, it is also 
+important to note that the majority of relief logistic operations never actually
+receive international attention. With this reality in mind, and in an effort to 
+simplify the modelling of the logistic chain, this project will consider the 
+simulation needs of a in-country based logistic chain. The simplification of the
+model is shown in Figure 3.
 
 \begin{center}
 \includegraphics{../images/Simplified_HLC.jpeg}
@@ -219,33 +238,33 @@ A Supplier entity is included in the simulation model. This entity is the source
 of ReliefSupplies. The Supplier entity is used, through design of experiments, 
 to simulate the reliability of suppliers. We do this by modelling three 
 categories of supplier: Partner (Preferential Supplier, representing the 
-creation of Strategic Supply Chain Partner Agreement with a given supplier such 
-as agreements on frequency of supplies by a given time, agreement on price 
-points etc.), an Adhoc Supplier (representing local suppliers that aid agencies 
-establish at the onset of a disaster but without any formal supplier partner 
-agreement being established), and a Midlevel supplier (representing known 
-suppliers ahead of the disaster but who have not entered into a Strategic 
-Agreement with the given aid agency). 
+establishment of strategic supply chain partnership agreements with a given 
+supplier such as commitments on the frequency of supplies by a given time, 
+agreement on price points etc.), an Adhoc Supplier (representing local suppliers
+that aid agencies establish at the onset of a disaster but without any formal 
+supplier partnership agreement being established), and a Midlevel supplier 
+(representing known suppliers ahead of the disaster but who have not entered 
+into a strategic agreement with the given aid agency). 
 
 The inter-arrival times for relief supplies produced by these entities differs 
 based on the construct of reliability. Note that the inter-arrival times are 
 modelled as Random Normal events with mean arrival time of supplies being faster
 for Partner Suppliers, followed by Midlevel suppliers and finally Ad-hoc 
 suppliers. The normal distribution was selected under an assumption that 
-production of supplies would be likely based on known manufacturing processes.
+production of supplies would likely be based on known manufacturing processes.
 This is noted as a uncorroborated assumption and would require comparisons of 
 the simulation results to real-world supplier data under the context of 
 emergencies.
 
 It should also be noted that the entity was also modelled on an assumption of
-infinite supply under the contraint of the inter-arrival time capability of the 
-supplier, and continuous demand driven by the anticipation of a disaster and then the disaster itself.
-This assumption was
-felt to be appropriate given the fact that the simulation is modelling the rapid 
-onset and response to a disaster wherein estimating affected beneficiary numbers 
-is very hard to achieve up front. Consequently modelling a continuous supply of
-relief items, is considered a fair reflection of the 
-real-world reality of an aid agency establishing a supply chain for relief items.
+infinite supply under the constraint of the inter-arrival time capability of the 
+supplier, and continuous demand driven by the anticipation of a disaster and 
+then the disaster itself. This assumption was felt to be appropriate given the 
+fact that the simulation is modelling the rapid onset and response to a disaster
+wherein estimating affected beneficiary numbers is very hard to achieve up front.
+Consequently modelling a continuous supply of relief items, is considered a fair
+reflection of the real-world reality of an aid agency establishing a supply chain
+for relief items.
 
 The following variables (Referenced Properties) were created to facilitate the 
 study: 
@@ -264,11 +283,13 @@ departing for the Warehouse.
 ### Warehouse
 
 A Warehouse entity was added to store disaster relief supplies in preparation 
-for a disaster and as the central hub for the aid agencies supply during 
-disasters. 
+for a disaster. This warehouse acted as the central hub for the aid agency to 
+supply distribution sites during disasters (i.e. no secondary level warehouses 
+were modelled).
 
-This entity was modelled as a server which processes incoming ReliefSupplies and
-stores them in a ready state for movement to a DistributionSite.
+The Warehouse entity was modelled as a server which processes incoming 
+ReliefSupplies and stores them in a ready state for movement to a 
+DistributionSite.
 
 The following variables were created to facilitate design of experiments:
 
@@ -276,11 +297,11 @@ The following variables were created to facilitate design of experiments:
 
 The delivery vehicle, WarehouseVehicle, was set to require a full load prior to 
 departing for a distribution site. A capacity of 1000 units was defined on these
-vehicles. Given the need to control against risk of transportation being 
+vehicles. Given the need to control against the risk of transportation being 
 hijacked while on route (losing supplies) and the fact that these vehicles need
 to access smaller roads, the warehouse to distribution sites are modelled with a
-smaller load carrying capacity. The WarehouseVehicle was also designed to have 
-periodic failures (details to follow).
+smaller load carrying capacity compared to the SupplierVehicle. The 
+WarehouseVehicle was also designed to have periodic failures (details to follow).
 
 * The capacity of the WarehouseVehicle: *WarehouseVehicleCapacity*
 
@@ -301,9 +322,8 @@ The following variable was created to facilitate design of experiments:
 
 Typically this is a fast process, especially with pre-packed relief supplies as
 would be expected in the scenario being simulated. A Random Exponential 
-with a mean of 1 minute was
-used to process individuals through the handover of supplies from aid worker to
-beneficiary.
+with a mean of 1 minute was used to process individuals through the handover of 
+supplies from aid worker to beneficiary.
 
 ### Relief Beneficiaries
 
@@ -324,13 +344,14 @@ Exponential event (inter arrival was set at every 2.5 minutes).
 The rational for this is given as follows:
 
 * Field experience of one of the researchers where the process of registrations 
-and verification of people has been clocked with an average of 2-3 minutes.
+and verification of people has been clocked with an average of 2-3 minutes per 
+beneficiary.
 
 * The exponential function is widely used to model arrivals that are completely 
 random. As this simulation is concerned with rapid onset emergencies, the 
 arrival of beneficiaries will be completely random (contrasted to distributions 
-that are more organized with the affected communities weeks and months after the
-disaster arrival)
+that are more organized ahead of time with the affected communities after weeks 
+or months following the disaster).
 
 * Research from studies looking at arrival times at emergency departments 
 reference the highly random nature of arrivals. Many use forms of exponential 
@@ -628,7 +649,7 @@ g2
 ```
 
 An average wait time by beneficiaries of 5 hours is noted when access to a 
-distribution site is easier (modelled as quicker time to gain access the 
+distribution site is easier (modelled as quicker time to gain access to the 
 distribution site). Interestingly we see that the model suggests that an 
 optimal time (in terms of reduced beneficiary wait time at the distribution 
 points) to reach/gain access to the distribution site is approximately 4 
@@ -638,13 +659,14 @@ again.
 It is suggested that the simulation is identifying a phenomenon associated with 
 the arrival and queuing times of beneficiaries at a distribution site in 
 conjunction with the capacity to serve the queue based on incoming supplies. One
-hypothesis is that at  the 4 hours mark to access the distribution site, 
-sufficient numbers of beneficiaries have accumulated to effectively service
-people more quickly with all available supplies on the truck. Quicker arrival 
-times of trucks to the sites may imply that few people have accumulated in the 
-queues. Moreover longer access times of the vehicles may mean that the buffer 
-queue of beneficiaries is not being cleared in the most optimal manner (recall 
-the capacity of the trucks are limited to 1000 units).
+hypothesis is that at  the 4 hour mark, sufficient numbers of beneficiaries have
+accumulated to effectively service people more quickly with all available 
+supplies arriving on the truck. Quicker arrival times of trucks to the sites may
+imply that few people have accumulated in the queues. Moreover longer access 
+times of the vehicles may mean that the buffer queue of beneficiaries is not 
+being cleared in the most optimal manner (Note that the capacity of the trucks 
+from the warehouse to the distribution sites are limited to carrying 1000 units 
+per trip).
 
 ## Warehouse Vehicle Failures
 
@@ -709,15 +731,15 @@ under this scenario:
 
 Note that the average travel time between warehouses and distribution sites was 
 the same (6 hours, with standard deviation of 30 minutes). Further, there is 
-only one truck servicing both distribution sites. It is unclear as to why supplies appeared to 
-move more quickly through the system in this scenario. One hypothesis is that 
-when site 2 was closed, the queue of beneficiaries at site 1 filled up quicker 
-and the numbers where therefore greater for distributing supplies to when the 
-truck arrived (in essence the simulation may indicate that closing site 2, 
-presented an opportunity to serving more people in a single truck-load of relief 
-items thereby reducing the time for supplies to be in the system). The average 
-wait time of beneficiaries would not have differed as the number of people 
-entering the simulation did not change.
+only one truck servicing both distribution sites. It is unclear as to why 
+supplies appeared to move more quickly through the system in this scenario. One 
+hypothesis is that when site 2 was closed, the queue of beneficiaries at site 1 
+filled up quicker and the numbers where therefore greater when distributing 
+supplies following the arrival of the truck. In essence, the simulation may 
+indicate that closing site 2, presented an opportunity to serve more people in a
+single truck-load of relief items thereby reducing the time for supplies to be 
+in the system. The average wait time of beneficiaries would not have differed as
+the number of people entering the simulation did not change.
 
 # Suggestions for future work 
 
@@ -727,12 +749,13 @@ assumptions associated with production frequencies based on supplier type, the
 expected inter-delivery times of supplies, and the arrival behaviour of 
 beneficiaries were estimated using domain knowledge experience and some 
 limited field data. However much of this needs to be supplemented with  
-experiments and production time observations at a broader scale. It is also 
-acknowledged that the context of the disaster will impact results. For example 
-disasters significantly affecting transportation infrastructure, would necessitate 
-modelling different modes of delivery (such as aerial) instead of land-based 
-vehicles. Future work may also look to adding an aspect of disaster intensity 
-and frequency as additions to the simulation.
+experiments and production time observations at a broader scale. 
+
+It is also acknowledged that the context of the disaster will impact results. 
+For example, disasters significantly affecting transportation infrastructure, 
+would necessitate modelling different modes of delivery (such as aerial) instead
+of land-based vehicles. Future work may also look to adding an aspect of 
+disaster intensity and disaster frequency as additions to the simulation.
 
 Further, adding a financial analysis component to the the models to provide a 
 cost quantification metrics would be a natural extension. For example to 
@@ -740,17 +763,17 @@ generate cost-benefit analysis of the different modes of reliable suppliers.
 This could be extended to include the opportunity costs of wait times for 
 beneficiaries.
 
-Quantifying supplies would help in finding optimal solutions in terms of amount
-of stock to preposition, versus time to deliver relief (efficiency) and also 
-to compare against wastage (spoiled supplies).
+Quantifying supplies would help in finding optimal solutions in terms of the 
+amount of stock to preposition, versus time to deliver relief (efficiency) and
+also to compare against wastage (spoiled supplies).
 
 Finally, future work may wish to consider growing the entities to encompass more
-complexity of local supply chain systems. For example, modelling a greater 
-number of warehouse centres (possibly modelling the movement from an in-country
-central warehouse to district level warehouses that hold supplies prior to 
-pre-planned distributions). The notion of security and risk may consequently 
-be built into such extended models, as the security risks at district level 
-warehouses are typically higher than those at central warehouses.
+complexity associated with local supply chain systems. For example, modelling a 
+greater number of warehouse centres (possibly modelling the movement from an 
+in-country central warehouse to district level warehouses that hold supplies 
+prior to running pre-planned distributions). The notion of security and risk may
+consequently be built into such extended models, as the security risks at 
+district level warehouses are typically higher than those at central warehouses.
 
 # Summary
 

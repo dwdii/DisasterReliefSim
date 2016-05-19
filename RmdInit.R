@@ -13,6 +13,7 @@ library(caret)
 library(data.table)
 library(reshape2)
 library(stargazer) ## I'm guessing you might need to install this one.
+library(dplyr)
 
 cleanbib()
 
