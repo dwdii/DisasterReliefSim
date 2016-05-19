@@ -186,8 +186,8 @@ simulations.
 
 In running the simulation, we present a model of a simplified humanitarian 
 logistics chain for the purpose of understanding the behaviour of the system and 
-for evaluating certain strategies. We aim to model key aspects of the 
-humanitarian logistics chain using computer simulation software (Simio). The 
+for evaluating certain strategies. We modelled key aspects of the 
+humanitarian logistics chain using computer simulation software (Simio v8.136.13435). The 
 intent is to understand the realities of moving humanitarian aid, particularly 
 to the last mile of distributions (something that has not garnered as much 
 research in the literature). 
@@ -776,6 +776,13 @@ consequently be built into such extended models, as the security risks at
 district level warehouses are typically higher than those at central warehouses.
 
 # Summary
+
+The simulation model developed in this study is focused on an in-country disaster relief scenario. The model
+is capable of more experiments than were executed given the variables and capabilities of Simio, but those experiments 
+which were performed show that supplier capability and commitment can have a significant impact on beneficiary
+outcomes. Additionally, depending on supply chain capability and other factors, more distribution sites may actually 
+degrade overall beneficiairy outcomes. Opening an additionaly distribution site should be considered carefully against 
+the impact to existing sites.
 
 
 
