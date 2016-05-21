@@ -121,7 +121,22 @@ dataForScenarios <- function(scenarios, data)
 
 # Abstract
 
-As disasters have affected more people, research into various aspects of relief planning and delivery appear to be increasing. This study focuses on in-country supply chain logistics extending from the originating supplier to last mile distribution to beneficiaries. A simulation model is developed using Simio and experiments are performed to gauge sensitivity to various parameters and decision variables. Supplier relationship factors are found to be key drivers of beneficiary outcomes. To facilitate reproducible research, the research materials are shared on GitHub.
+Disasters exact an extreme toll on lives and on economic well-being. Research 
+into key aspects of disaster management is increasing. This study looks 
+specifically at the domain of humanitarian logistics and more specifically, at 
+intra-country relief logistics to the last mile, that point of transitioning aid
+to people affected by disasters. By identifying the key business processes, the 
+authors present a model of supply logistics using computer based simulation 
+software.  The simulation enables experiments to investigate the value of 
+establishing strategic supply chain agreements with vendors. The modeling of 
+various supply chain choices are carried through to understand the impact on 
+moving relief aid through the pipeline and on understanding the capabilities to 
+service more beneficiaries in an efficient manner. The simulation model also 
+enables research into the impact of access restrictions to distribution sites 
+and the concerns on reliability of vehicle transfers in the supply chain 
+process. Suggestions are given on natural extensions to the model and 
+facilitating this intent, a public GitHub repository is made available for 
+additional research.
 
 # Keywords
 
