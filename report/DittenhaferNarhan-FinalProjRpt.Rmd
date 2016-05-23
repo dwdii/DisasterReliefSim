@@ -128,7 +128,7 @@ intra-country relief logistics to the last mile, that point of transitioning aid
 to people affected by disasters. By identifying the key business processes, the 
 authors present a model of supply logistics using computer based simulation 
 software.  The simulation enables experiments to investigate the value of 
-establishing strategic supply chain agreements with vendors. The modeling of 
+establishing strategic supply chain agreements with vendors. The modelling of 
 various supply chain choices are carried through to understand the impact on 
 moving relief aid through the pipeline and on understanding the capabilities to 
 service more beneficiaries in an efficient manner. The simulation model also 
@@ -804,8 +804,11 @@ were executed given the variables and capabilities of Simio, but those
 experiments which were performed show that supplier capability and commitment
 can have a significant impact on beneficiary outcomes. Additionally, depending
 on supply chain capability and other factors, more distribution sites may actually 
-degrade overall beneficiairy outcomes. Opening an additionaly distribution site 
-should be considered carefully against the impact to existing sites.
+degrade overall beneficiary wait times (holding other things constant, such as 
+travel time or opportunity cost of travelling to alternative distribution sites).
+Opening an additionally distribution site should be considered carefully against 
+the efficiency constraints stemming from logistic capacity such as supplier 
+throughput and vehicle transfer capabilities.
 
 All materials related to this study including the actual Simio simulation model 
 are shared on GitHub under our DisasterReliefSim repository `r citep(bibGitHub)`.
