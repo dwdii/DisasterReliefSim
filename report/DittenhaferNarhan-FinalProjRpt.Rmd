@@ -233,7 +233,7 @@ depicted in the following chart.
 \end{center}
 
 The IHLC is an involved process adding significant complexity to the movement of
-relief resources - see ``r citep(bibBastianEtAl)` for an example of modelling 
+relief resources - see `r citep(bibBastianEtAl)` for an example of modelling 
 an international logistics chain.
 
 While international humanitarian logistics is a complex process, it is also 
@@ -708,7 +708,7 @@ dfExp <- reliefBenAvgForScenarios(vWarehouseVehicleScenarios, dfResults)
 #dfExp
 g2 <- ggplot(dfExp) + 
   geom_line(aes(x=WarehouseVehicleUptimeBetweenFailures, y=Average)) +
-  labs(x="Warehouse Vehicle Update Between Failures (hours)",
+  labs(x="Warehouse Vehicle Uptime Between Failures (hours)",
        y="Avg Beneficiary Time In System (hours)") +
     ylim(0, 10) +
   myTheme
@@ -806,7 +806,7 @@ can have a significant impact on beneficiary outcomes. Additionally, depending
 on supply chain capability and other factors, more distribution sites may actually 
 degrade overall beneficiary wait times (holding other things constant, such as 
 travel time or opportunity cost of travelling to alternative distribution sites).
-Opening an additionally distribution site should be considered carefully against 
+Opening an additional distribution site should be considered carefully against 
 the efficiency constraints stemming from logistic capacity such as supplier 
 throughput and vehicle transfer capabilities.
 
